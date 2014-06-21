@@ -1,0 +1,150 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title> Daily Data Insights </title>
+
+	<meta http-equiv="content-type" 
+		content="text/html;charset=utf-8" />
+
+    <link href="/home/aumannd/Code/node-express-mongoose-demo/public/css/tipsy.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/home/aumannd/Code/node-express-mongoose-demo/public/css/styleZen.css" type="text/css" />
+    <link rel="stylesheet" href="1.css" type="text/css" />
+	<link rel="shortcut icon" href="/favicon/favicon.ico" />
+	<link rel="shortcut icon" href="/home/aumannd/Code/node-express-mongoose-demo/public/commons/bootstrap-3.1.1/css/bootstrap.css" />
+	
+
+</head>
+    
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/home/aumannd/Code/node-express-mongoose-demo/public/js/jquery.infinitescroll.js"></script>
+	<script type="text/javascript" src="/home/aumannd/Code/node-express-mongoose-demo/public/js/manual-trigger.js"></script>
+    <script  type="text/javascript" src="/home/aumannd/Code/node-express-mongoose-demo/public/js/jquery.tipsy.js"></script>
+
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="./commons/bootstrap-3.1.1/js/bootstrap.js" charset="utf-8"></script>
+
+
+    
+<body>
+
+
+	<div class="containerOne">
+        <div class="top" style="text-align: !left; margin-bottom: -30px; margin-top: 10px; opacity: 0.5" onmouseover="this.style.opacity='1'; document.getElementById('menuItems').style.opacity='1'; document.getElementById('quotes').style.display='none';  document.getElementById('menuItems').style.display='block' " onmouseout="this.style.opacity='0.5';document.getElementById('menuItems').style.opacity='0'; document.getElementById('menuItems').style.display='none'; document.getElementById('quotes').style.display='block'; " >
+
+            <h1>
+                <a href='/'> <img  style=" margin-bottom: 30px;  margin-right: 20px;" src="wikivisLogo.png" title="Daily Data Insights - Applied Data Science" height="150"width="150"   ></a>
+                <div id="menuItems" style="margin-bottom: 74px;   margin-top: -40px; display:none; opacity:0; padding-top:20px">
+                    <a style="color: rgb(54,154,104); " href="/about/">about</a>:: <a style="color: rgb(9,106,156);" href='/'>showroom</a> :: <a style=" color: rgb(153,0,0)" href="/create/">create</a>
+                </div>
+
+                <blockquote id="quotes" style="margin-bottom: 50px;   margin-top: -40px;  padding-top:20px">
+                    "Some of the best theorizing comes after collecting data because then you become aware of another reality." - <b>Robert J. Shiller</b>
+
+                </blockquote>
+
+
+
+            </h1>
+
+        </div>
+		
+		
+<div id="content" >
+
+<article>
+
+	
+<table >
+<tr><td >
+
+<div style="float:left">
+         <div><img src="up.svg" title="This visualisation shows research effort; it is clear and appropriate" height="39" style="margin-bottom: -10px;" onmouseover="this.style.opacity='0.5';" onmouseout="this.style.opacity='1';"></div>
+        
+	 <div style="text-align: center; opacity:0.5"><span id="points">1015</span></div>
+	 <div><img src="down.svg" title="This visualisation does not show research effort; it is not clear or inappropriate" height="39"  style="margin-top: -10px;" onmouseover="this.style.opacity='0.5';"  onmouseout="this.style.opacity='1';"></div>
+	 
+	 </div>
+	 
+        <h2 style=" text-align: left; margin-top: 26px; margin-left: 60px; opacity: 0.5" onmouseover="this.style.opacity='1'; " onmouseout="this.style.opacity='0.5';"  >
+           
+                Football Champions  </a>
+        </h2>
+
+   </td>
+   <td style="opacity: 0.5" width="140px">
+   
+   
+   	 <div style="display:block; float: right;">
+		 <img src="images/badgeInteractive.png" title="This visualisation is interactive." height="39"  style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ">
+		 <img src="images/badgeTop.png" title="This visualisation is or has been voted amongst the top 5 visualisations of this page." height="39"  style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ">
+	 </div>
+      </td></tr>
+<tr><td colspan="2">
+        <div id="contentSVG">
+            
+        </div>
+
+
+
+</td></tr>
+<tr><td colspan="2" style="opacity: 0.5" onmouseover="this.style.opacity='1'; " onmouseout="this.style.opacity='0.5'; ">
+
+
+   <div style="margin-top: 30;" ><p>Overview of Europe's major football club champions.</p><p> In Spain, <strong style="font-weight: bold">Real Madrid</strong> leads the field with 32 championships, followed by <strong style="font-weight: bold">FC Barcelona</strong> (22) and <strong style="font-weight: bold">Atlético Madrid</strong> (10). <a href="http://en.wikipedia.org/wiki/List_of_Spanish_football_champions" style="opacity: 0.8" onmouseover="this.style.opacity='0.5';"  onmouseout="this.style.opacity='0.8';" > [1]</a><br>   The English Premiere League which is the oldest football league in Europe (founded in 1888) has also the most even distribution of championships with <strong style="font-weight: bold">Manchester United</strong> (20) just leading two ahead of <strong style="font-weight: bold">FC Liverpool</strong> (18). Arsenal London comes in third with 13 championships. <a href="http://en.wikipedia.org/wiki/List_of_English_football_champions" style="opacity: 0.8" onmouseover="this.style.opacity='0.5';"  onmouseout="this.style.opacity='0.8';" > [2]</a><br>   <strong style="font-weight: bold">FC Bayern Munich</strong> (24) is the undisputed German Bundesliga champion, leading 15 championships in front of <strong style="font-weight: bold">1.FC Nuremberg</strong> which could not win another championship since 45 years - only <strong style="font-weight: bold">Borussia Dortmund</strong> (8) being a rival in the last years. <a href="http://en.wikipedia.org/wiki/List_of_German_football_champions" style="opacity: 0.8" onmouseover="this.style.opacity='0.5';"  onmouseout="this.style.opacity='0.8';" > [3]</a> </p>
+
+
+		</div> 
+
+		<p>Sources:  <a href="http://en.wikipedia.org/wiki/List_of_Spanish_football_champions" style="opacity: 0.8" onmouseover="this.style.opacity='0.5';"  onmouseout="this.style.opacity='0.8';" > [1]</a>
+            <a href="http://en.wikipedia.org/wiki/List_of_English_football_champions" style="opacity: 0.8" onmouseover="this.style.opacity='0.5';"  onmouseout="this.style.opacity='0.8';" > [2]</a>
+            <a href="http://en.wikipedia.org/wiki/List_of_German_football_champions" style="opacity: 0.8" onmouseover="this.style.opacity='0.5';"  onmouseout="this.style.opacity='0.8';" > [3]</a>
+
+        </p>
+		
+	<footer style="display: block;">
+	<a id="articleComments" style="text-decoration: underline; float:right; font-size: small; font-size: small;" href="/ID/">59 comments</a>
+<form>
+<input  style="margin-top:6px; margin-left:5px;" type="submit" value="Submit"><input style="float: left; width:435px;" type="text" name="LastName" value="Leave a comment..">
+</form>
+</footer>
+
+
+	</td>
+</tr>
+</table>
+
+
+</article>
+</div>
+
+		
+
+
+	</div>  <!-- /end .container -->
+
+
+
+    <script  type="text/javascript" src="1.js"></script>
+<script type="text/javascript">
+
+
+ 
+//addArticle(points, title, commentsCount, date, contentThumbURL, contentURL, referenceURLs);
+
+function upVote(id){
+
+// increment points of element in newGeodata and write back to csv.
+
+var a = event.target;
+event.srcElement.parentElement.nextElementSibling.firstChild.innerHTML = parseInt(event.srcElement.parentElement.nextElementSibling.firstChild.innerHTML) +1;
+console.debug(id);
+}
+    
+
+
+
+
+</script>
+
+</body>
+</html>

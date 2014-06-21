@@ -1,0 +1,20 @@
+.grid  {
+    fill: lightgrey;
+
+}
+
+.xlabel {
+
+    font-size:13px;
+
+}
+
+.tick {
+
+    font-size:10px;
+
+}
+
+.grid path {
+      stroke-width: 0;
+}

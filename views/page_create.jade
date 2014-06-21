@@ -1,0 +1,44 @@
+html
+    head
+        title  Daily Data Insights
+        meta(http-equiv='content-type', content='text/html;charset=utf-8')
+        
+        link(rel='stylesheet', href='../css/styleZen.css', type='text/css')
+        link(rel='stylesheet', href='../css/page_create.css', type='text/css')
+        link(rel='shortcut icon', href='../img/favicon.ico')
+        link(rel='shortcut icon', href='../commons/bootstrap-3.1.1/css/bootstrap.css')
+
+    link(rel="stylesheet", href="../css/bootstrapSubset.css")
+    
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
+    script(type='text/javascript', src='../js/jquery.infinitescroll.js')
+    script(type='text/javascript', src='../js/manual-trigger.js')
+    script(src='http://d3js.org/d3.v3.min.js', charset='utf-8')
+    script(src='../commons/bootstrap-3.1.1/js/bootstrap.js', charset='utf-8')
+
+    body
+        button(style='display: none;', onclick='clickedButton2()') Add article 2
+        button(style='display: none;', onclick='clickedButton1()') Add article 1
+        button(style='display: none;', onclick='sortArticles()') Sort
+        .container
+            .top(style='text-align: !left; margin-bottom: -30px; margin-top: 10px; opacity: 0.5;', onmouseover='this.style.opacity=\'1\'; document.getElementById(\'menuItems\').style.opacity=\'1\'; document.getElementById(\'quotes\').style.display=\'none\';  document.getElementById(\'menuItems\').style.display=\'block\' ', onmouseout='this.style.opacity=\'0.5\';document.getElementById(\'menuItems\').style.opacity=\'0\'; document.getElementById(\'menuItems\').style.display=\'none\'; document.getElementById(\'quotes\').style.display=\'block\'; ')
+                div(style='height: 280;')
+                    h1
+                        img(style='margin-bottom: 30px; margin-right: 20px;', src='../img/wikivisLogo.png', title='Daily Data Insights - Applied Data Science', height='150', width='150')
+                        #menuItems(style='margin-bottom: 74px; margin-top: -40px; display: none; opacity: 0; padding-top: 20px;')
+                            a#tagline(style='color: rgb(54,154,104);', href='/about/') about
+                            |  :: 
+                            a(style='color: rgb(9,106,156);', href='/') showroom
+                            |  :: 
+                            a#tagline(style='opacity: 0.4; color: rgb(153,0,0);') create
+                        blockquote#quotes(style='margin-top: -40px; padding-top: 20px; display: block;')
+                            |
+            
+            #content(style="margin-top: 25px;")
+                .container
+                    #countdown
+                    //
+                       JavaScript includes
+                    script(src='http://code.jquery.com/jquery-1.7.1.min.js')
+                    script(src='../js/jquery.countdown.js')
+                    script(src='../js/page_create.js')

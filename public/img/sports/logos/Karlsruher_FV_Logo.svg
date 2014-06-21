@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:odm="http://product.corel.com/CGS/11/cddns/" xml:space="preserve" width="600px" height="600px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd"
+     viewBox="0 0 600 600">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str2 {stroke:#FFFFFF;stroke-width:4}
+    .str1 {stroke:#1F1A17;stroke-width:8}
+    .str0 {stroke:#FFFFFF;stroke-width:8}
+    .str3 {stroke:#FFFFFF;stroke-width:33}
+    .str4 {stroke:#FFFFFF;stroke-width:33;stroke-linejoin:bevel}
+    .fil2 {fill:none}
+    .fil0 {fill:#1F1A17}
+    .fil1 {fill:#DA251D}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene 1">
+  <path class="fil0" d="M300 300l-251 117c-16,-36 -26,-77 -26,-117 0,-153 124,-277 277,-277 107,0 207,64 251,160l-251 117z"/>
+  <path class="fil1" d="M300 300l251 -117c16,36 26,77 26,117 0,153 -124,277 -277,277 -107,0 -207,-64 -251,-160l251 -117z"/>
+  <circle class="fil2 str0" cx="300" cy="300" r="277"/>
+  <circle class="fil2 str1" cx="300" cy="300" r="285"/>
+  <path class="fil2 str2" d="M48 417l503 -234"/>
+  <path class="fil2 str3" d="M350 105l-135 61 62 293"/>
+  <path class="fil2 str4" d="M500 404l-159 -197 -188 86 -22 -103m210 17l99 -46 -23 276 -143 -197m-121 53l33 153"/>
+ </g>
+</svg>

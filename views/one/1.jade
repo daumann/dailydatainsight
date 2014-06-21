@@ -1,0 +1,151 @@
+html(xmlns="http://www.w3.org/1999/xhtml")
+    head
+        title  Daily Data Insights 
+        meta(http-equiv="content-type", content="text/html;charset=utf-8")
+        link(href="../css/tipsy.css", rel="stylesheet", type="text/css")
+        link(rel="stylesheet", href="../css/styleZen.css", type="text/css")
+        link(rel="stylesheet", href="../css/1.css", type="text/css")
+
+        link(rel="shortcut icon", href="../img/favicon.ico")
+        link(rel="shortcut icon", href="../commons/bootstrap-3.1.1/css/bootstrap.css")
+        link(rel="stylesheet", href="../css/bootstrapSubset.css")
+    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+    script(type="text/javascript", src="../js/jquery.infinitescroll.js")
+    script(type="text/javascript", src="../js/manual-trigger.js")
+    script(type="text/javascript", src="../js/jquery.tipsy.js")
+    script(src="http://d3js.org/d3.v3.min.js", charset="utf-8")
+    script(src="../commons/bootstrap-3.1.1/js/bootstrap.js", charset="utf-8")
+    body
+        .containerOne
+            .top(style="text-align: !left; margin-bottom: -30px; margin-top: 10px; opacity: 0.5", onmouseover="this.style.opacity='1'; document.getElementById('menuItems').style.opacity='1'; document.getElementById('quotes').style.display='none';  document.getElementById('menuItems').style.display='block' ", onmouseout="this.style.opacity='0.5';document.getElementById('menuItems').style.opacity='0'; document.getElementById('menuItems').style.display='none'; document.getElementById('quotes').style.display='block'; ")
+                div(style='height: 280;')
+                    h1
+                        a(href='/')
+                            img(style='margin-bottom: 30px; margin-right: 20px;', src='../img/wikivisLogo.png', title='Daily Data Insights - Applied Data Science', height='150', width='150')
+                        #menuItems(style='margin-bottom: 74px; margin-top: -40px; display: none; opacity: 0; padding-top: 20px;')
+                            a(style='color: rgb(54,154,104);', href='/about/') about
+                            |  :: 
+                            a(style='color: rgb(9,106,156);', href='/') showroom
+                            |  :: 
+                            a(style='color: rgb(153,0,0);', href='/create/') create
+                        blockquote#quotes(style='margin-top: -40px; padding-top: 20px; display: block;')
+                            |
+
+            #content
+
+            article
+                table
+                    tr
+                        td
+
+                            div(style="float:left")
+                                div#upVoteDiv
+                                    img(src="../img/up.svg", title="This visualisation shows research effort; it is clear and appropriate", height="39", style="cursor: pointer; margin-bottom: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="upVote(1)")
+                                div(style="text-align: center; opacity:0.5")
+                                    span#points
+                                        img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+                                div#downVoteDiv
+                                    img(src="../img/down.svg", title="This visualisation does not show research effort; it is not clear or inappropriate", height="39", style="cursor: pointer; margin-top: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="downVote(1)")
+                            h2#insightTitle(style=" text-align: left; margin-top: 26px; margin-left: 60px; opacity: 0.8")
+                                | *** loading title ***
+                        td(style="opacity: 0.5", width="140px")
+                            div#insightBadges(style="display:block; float: right;")
+                                img(src="../img/badgeInteractive.png", title="This visualisation is interactive.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+                                img(src="../img/badgeTop.png", title="This visualisation is or has been voted amongst the top 5 visualisations of this page.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+                    tr
+                        td(colspan="2")
+                            #contentSVG
+                            p(style="color:rgb(153,0,0); margin-top: 10px;font-style:italic ") Hover over logos to see exact values. 
+                    tr
+                        td(colspan="2", style="opacity: 0.8", onmouseover="this.style.opacity='1'; ", onmouseout="this.style.opacity='0.8'; ")
+                            div#insightDescription(style="margin-top: 30;")                                                      
+                                p Overview of Europe's major football club champions.
+                                p
+                                    | In Spain, 
+                                    strong(style='font-weight: bold;') Real Madrid
+                                    |  leads the field with 32 championships, followed by 
+                                    strong(style='font-weight: bold;') FC Barcelona
+                                    |  and 
+                                    strong(style='font-weight: bold;') Atlético Madrid
+                                    | .
+                                    a(href='http://en.wikipedia.org/wiki/List_of_Spanish_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [1]
+                                    br
+                                    | The English Premiere League which is the oldest football league in Europe (founded in 1888) has also the most even distribution of championships with 
+                                    strong(style='font-weight: bold;') Manchester United
+                                    |  just leading two ahead of 
+                                    strong(style='font-weight: bold;') FC Liverpool
+                                    | . 
+                                    strong(style='font-weight: bold;') Arsenal London
+                                    |  comes in third with 13 championships.
+                                    a(href='http://en.wikipedia.org/wiki/List_of_English_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [2]
+                                    br
+                                    strong(style='font-weight: bold;') FC Bayern Munich
+                                    |  is the undisputed German Bundesliga champion, leading 15 championships in front of 
+                                    strong(style='font-weight: bold;') 1.FC Nuremberg
+                                    |  which could not win another championship since 45 years - only 
+                                    strong(style='font-weight: bold;') Borussia Dortmund
+                                    |  being a rival in recent years.
+                                    a(href='http://en.wikipedia.org/wiki/List_of_German_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [3]
+                                    br
+                                    strong(style='font-weight: bold;') Juventus Turin
+                                    |  leads the Italian Serie A. Followed by two clubs from Milan - 
+                                    strong(style='font-weight: bold;') Internazionale 
+                                    |  and 
+                                    strong(style='font-weight: bold;') AC Milan
+                                    | .
+                                    a(href='http://en.wikipedia.org/wiki/List_of_Italian_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [4]
+                                    br
+                                    | The French Ligue 1, counting from the professional era (1932-), has currently two leaders: 
+                                    strong(style='font-weight: bold;') Saint-Etienne 
+                                    |  and 
+                                    strong(style='font-weight: bold;') Marseille
+                                    | . It should be noted that from 2002 until 2008, 
+                                    strong(style='font-weight: bold;') Lyon
+                                    |  won the championship every year - making them the newcomer in the all-time top five. 
+                                    a(href='http://en.wikipedia.org/wiki/List_of_French_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [5]
+                                    div(style='float:left;')
+                                        | Sources:
+                                        a(title='http://en.wikipedia.org/wiki/List_of_Spanish_football_champions' href='http://en.wikipedia.org/wiki/List_of_Spanish_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [1]
+                                        a(title='http://en.wikipedia.org/wiki/List_of_English_football_champions' href='http://en.wikipedia.org/wiki/List_of_English_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [2]
+                                        a(title='http://en.wikipedia.org/wiki/List_of_German_football_champions' href='http://en.wikipedia.org/wiki/List_of_German_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [3]
+                                        a(title='http://en.wikipedia.org/wiki/List_of_Italian_football_champions' href='http://en.wikipedia.org/wiki/List_of_Italian_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [4]
+                                        a(title='http://en.wikipedia.org/wiki/List_of_French_football_champions' href='http://en.wikipedia.org/wiki/List_of_French_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [5]
+                                    div#postDate(style='float:right;')
+                                        img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+
+                    tr
+                        td(colspan="2")
+                            a(name='commentSection')
+                            div(style="border-top: 1px solid #e7e7e7; margin-top: 70px; margin-bottom: 10px;")
+                            h3(style="float: left; margin-bottom: 30px;margin-top: 10px;") Leave a comment
+
+
+                            block content
+
+                                div.addCommentForm
+                                    form( method="post", action="/create/1")
+                                        div
+                                            div
+                                                input.form-control(style="background: #f9f9f9; margin-top: 10px;",type="text", class="nameTxt", name="username",placeholder='Name')
+                                            div
+                                                textarea.form-control(style="background: #f9f9f9; margin-top: 11px;",placeholder='Comment', rows='3', name='comment')
+                                            div#addCommentSubmit
+                                                input.btn.btn-default.btn-outline(style="margin-top: 10px;", type="submit", value="Submit")
+                                br
+                                br
+                                #commentsSorted
+                                #comments
+                                    - each comment in comments
+                                        div.comment
+                                            h4
+                                                div.name(style="float:left; font-weight: bold;")= comment.username
+                                                small
+                                                    div(style="float:right").created_at= comment.created
+                                            br
+                                            div.content(style="clear: both; padding-top: 5px;")= comment.content
+                                            hr
+
+
+
+        script(type="text/javascript", src="../js/1.js")
+        script(type="text/javascript", src="../js/allInsights.js")

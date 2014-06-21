@@ -1,0 +1,178 @@
+<script type="text/javascript"> 
+  
+    var sampleSVG = d3.select("#VIS3")
+        .append("svg:svg")
+        .attr("width", 100)
+        .attr("height", 100);
+ 
+    sampleSVG.append("svg:circle")
+        .style("stroke", "black")
+        .style("fill", "purple")
+        .attr("r", 40)
+        .attr("cx", 50)
+        .attr("cy", 50)
+  
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#content').infinitescroll({
+		navSelector: "#next:last",
+		nextSelector: "#next:last",
+		itemSelector: "#content",
+		debug: false,
+		dataType: 'html',
+    maxPage: 6,
+		path: function(index) {
+			console.debug("going to index"+index+".html");
+			return "index" + index + ".html";
+		}
+		// appendCallback	: false, // USE FOR PREPENDING
+    }, function(newElements, data, url){
+      // used for prepending data
+    	// $(newElements).css('background-color','#ffef00');
+    	// $(this).prepend(newElements);
+    });
+});
+
+// TODO: show custom tooltip on badges
+     var geoData;
+     
+            function reformat (array) {
+          var data = [];
+          array.map(function (d){
+            data.push({
+                id: +d.id,
+                points: d.points,
+                title: d.title,
+                commentsCount: d.commentsCount,
+                date: +d.date,
+                contentThumbURL: d.contentThumbURL,
+                contentURL: d.contentURL,
+                referenceURLs: d.referenceURLs
+
+            });
+          });
+          return data;
+        }
+    
+function clickedButton1(){
+    $("#content").empty();
+    
+          d3.csv('articleArchiv/articles.csv', function (error, allArticles) {
+
+
+              
+        //geoData = { type: "FeatureCollection", features: reformat(allArticles) };
+                     console.debug(allArticles);    
+
+allArticles.sort(function (a, b) {
+    if (a.points > b.points)
+      return -1;
+    if (a.points < b.points)
+      return 1;
+    // a must be equal to b
+    return 0;
+});
+
+
+    for (var i=0;i<allArticles.length;i++)
+    { 
+        
+        
+        addArticle(allArticles[i].points, allArticles[i].title, allArticles[i].commentsCount, allArticles[i].date, allArticles[i].contentThumbURL, allArticles[i].contentURL, allArticles[i].referenceURLs);
+    }
+              
+              // saveCSV serverside!
+    
+            //  console.debug();
+              
+          });
+                 
+                 
+
+    
+    }
+    // load JSON
+    
+    // LOOP thru sorted list
+    
+//addArticle(points, title, commentsCount, date, contentThumbURL, contentURL, referenceURLs);
+
+function upVote(id){
+
+// increment points of element in newGeodata and write back to csv.
+
+var a = event.target;
+event.srcElement.parentElement.nextElementSibling.firstChild.innerHTML = parseInt(event.srcElement.parentElement.nextElementSibling.firstChild.innerHTML) +1;
+console.debug(id);
+}
+    
+
+
+function clickedButton2(){
+
+var points, title, commentsCount, date, contentThumbURL, contentURL, referenceURLs
+
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+
+var yyyy = today.getFullYear();
+if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = dd+'/'+mm+'/'+yyyy;
+// only ID gets transmitted, then all the other parameters are looked up.
+
+points = 12;
+title = "FOOTBALL";
+subtitle = ": Champions of the last 100 years";
+commentsCount = 14;
+date = today;
+contentThumbURL = "thumbs/placeholderSVG1.png";
+contentURL = "one.html";
+referenceURLs = new Array("www.wikipedia.org/1","www.wikipedia.org/2");
+
+addArticle(points, title, subtitle,commentsCount, date, contentThumbURL, contentURL, referenceURLs);
+
+}
+
+
+
+function addArticle(points, title,subtitle,commentsCount, date, contentThumbURL, contentURL, referenceURLs){
+var id
+
+// only ID gets transmitted, then all the other parameters are looked up.
+
+
+console.log("*** adding new article ***");
+
+var newArticle='<article data-points='+points+' data-title='+title+' data-commentsCount='+commentsCount+' data-date='+date+' data-contentThumbURL='+contentThumbURL+' data-contentURL='+contentURL+' data-referenceURLs='+referenceURLs+' class="badge-entry-container badge-entry-entity"><header><div style="float:left; text-align: center; padding-right: 10px;"><div><img onclick="upVote('+id+')" src="up.svg" title="This visualisation shows research effort; it is clear and appropriate" height="39" style="margin-bottom: -10px;" onmouseover="this.style.opacity=&quot;0.5&quot;;" onmouseout="this.style.opacity=&quot;1&quot;;"></div><div><span id="points">'
++points+
+'</span></div><div><img onclick="downVote()" src="down.svg" title="This visualisation does not show research effort; it is not clear or inappropriate" height="39"  style="margin-top: -10px;" onmouseover="this.style.opacity=&quot;0.5&quot;;"  onmouseout="this.style.opacity=&quot;1&quot;;"></div></div>  <h4 style="vertical-align:absbottom; text-align: left; display:inline"<a href="/one.html" target="_blank" >'+title+'</a></h4><h4 style="vertical-align:absbottom; text-align: left; display:inline"<a href="/one.html" target="_blank" >'+subtitle+'</a></h4><p class="post-meta" style="padding-bottom: 10px"><a style="text-decoration: underline" href="/'
++contentURL+
+'#comment" target="_blank" data-evt="EntryAction,CommentLinkUnderTitle,ListPage" >'
++commentsCount+
+' comments</a> · <span class="badge-item-love-count">'
++date+
+'</span></p></header><div class="article-vis"><a href="'
++contentURL+
+'" class="badge-evt badge-animated-cover badge-track badge-track-no-follow" data-evt="EntryAction,GIFPlayed,ListPage" data-track="post,p,,,d,a8W2NDZ,l" style="min-height:366.30434782609px;"><div class="badge-animated-container-static gif-post presenting"><img class="badge-item-img" src="'+contentThumbURL+'" style="width: 550px"/><span class="play" style="width: 120px;">Activate</span></div></a><div style="margin-top: 8px; font-family: References; text-align: right;font-style: italic;">References: <a href="'+referenceURLs[0]+'" target="_blank" >[1]</a><a href="'+referenceURLs[1]+'" target="_blank" >[2]</a></div></div><footer><form><input  style="margin-top:6px; margin-left:5px;" type="submit" value="Submit"><input style="float: left; width:435px;" type="text" name="LastName" value="Leave a comment.."></form></div></footer></article>';
+
+$("#content").append(newArticle);
+
+}
+
+
+function sortArticles()
+{
+	console.debug(document.getElementsByTagName("article"));
+    
+    var articles = document.getElementsByTagName("article");
+    
+    for (var i=0;i<articles.length;i++)
+    { 
+        console.debug(articles[i].dataset.points);
+    }
+    
+}
+</script>
