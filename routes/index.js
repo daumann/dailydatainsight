@@ -1,28 +1,11 @@
 
-/*
- * GET home page.
- */
-
-
 var mongoose = require( 'mongoose' );
 
-
+var nodemailer = require("nodemailer");
 
 var Comment = mongoose.model( 'Comment'), Comment1 =mongoose.model( 'Comment'), Comment2 = mongoose.model( 'Comment2');
 
 
-/*
-Comment.remove({}, function(err) {
-    console.log('collection removed')
-});
-Comment1.remove({}, function(err) {
-    console.log('collection removed')
-});
-Comment2.remove({}, function(err) {
-    console.log('collection removed')
-});
-
-*/
 
 var commentArray = [mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment')];
 
@@ -73,7 +56,9 @@ exports.vote = function ( req, res ){
 
 //end_parsed will be emitted once parsing finished
     csvConverter.on("end_parsed",function(jsonObj){
-        
+
+        console.log("jsonObj:");
+        console.log(jsonObj);
         
         var insightID = req.params.id;
         console.log(jsonObj.length);
@@ -96,7 +81,10 @@ exports.vote = function ( req, res ){
         }
 
         var csvContent = json2csv.convert(jsonObj);
-
+        
+        console.log("csvContent:");
+        console.log(csvContent);
+        
         fs.writeFile(csvFileNameNew, csvContent, function(err) {
             if(err) {
                 console.log(err);

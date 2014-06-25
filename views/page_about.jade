@@ -39,7 +39,11 @@ html
                             |  is a platform to present, rate and share.
 
                         p
-                            | DDI is developed by Dietmar Aumann as an independent and nonprofit project.
+                            | DDI is developed by 
+                            a(href='http://github.com/daumann') Dietmar Aumann
+                            |  as an independent and nonprofit project. I love clean and minimalistic design and enjoy losing myself in interesting data sets around the world. You can find some of those projects in the 
+                            a(href='http://www.dailydatainsights.com') showroom
+                            | . While not always daily, new content is added regularly. 
                         
                         p
                             | Tools used include 
@@ -61,9 +65,24 @@ html
                             |  and 
                             a(href='http://www.mongodb.org/') MongoDB
                             | .
+                        
+                        p 
+                            | Don't miss an update, like DDI on: 
+                            a( href='http://www.facebook.com/dailydatainsights') Facebook!
+                        
+                        div(style="border-top: 1px solid #e7e7e7; margin-top: 30px; margin-bottom: 10px;")
 
-                        p
-                            | Inquiries can be sent to:
-                            em  aumann@dailydatainsights.com
-    
+                        p   I would love to hear from you.  Have suggestions for improving this website, questions, or inquiries?
+
+                        div.addCommentForms(style="clear: both;")
+                            form
+                                div
+                                    div
+                                        input#emailSender.form-control(style="background: #f9f9f9; margin-top: 10px;",type="email", class="nameTxt", name="email",placeholder='Your email')
+                                    div
+                                        textarea#emailContent.form-control(style="background: #f9f9f9; margin-top: 11px;",placeholder='Your message...', rows='3', name='comment')
+                                    div
+                                        input.btn.btn-default.btn-outline(onclick="sendEmail()" style="margin-top: 10px;", type="submit", value="Send Email")
+                        
+
     script(type="text/javascript", src="../js/page_about.js")

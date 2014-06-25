@@ -125,7 +125,6 @@ var timeSince = function(date) {
     return interval + ' ' + intervalType;
 };
 
-
 function upVote(id){
 
     if (localStorage.getItem(id) != 1) {

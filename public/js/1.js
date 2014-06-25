@@ -222,7 +222,8 @@ drawLogoCloud(championshipCountArray_fr,logoArray_fr,labelArray_fr, "Total Ligue
 function drawLogoCloud(championshipCountArray, logoArray, labelArray, capture){
 var svg = d3.select("#contentSVG").append("svg")
     .attr("width", width)
-    .attr("height", height);
+    .attr("height", height)
+    .attr("overflow", "hidden");
 
 	
 //START xAxis
