@@ -3,34 +3,39 @@ var mongoose = require( 'mongoose' );
 
 var nodemailer = require("nodemailer");
 
-var Comment = mongoose.model( 'Comment'), Comment1 =mongoose.model( 'Comment'), Comment2 = mongoose.model( 'Comment2');
+//var Comment = mongoose.model( 'Comment'), Comment1 =mongoose.model( 'Comment'), Comment2 = mongoose.model( 'Comment'), Comment3 =mongoose.model( 'Comment'), Comment4 = mongoose.model( 'Comment');
 
 
 
-var commentArray = [mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment')];
+var commentArray = [mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoose.model( 'Comment2'),mongoose.model( 'Comment3'),mongoose.model( 'Comment4'),mongoose.model( 'Comment5'),mongoose.model( 'Comment6'),mongoose.model( 'Comment7'),mongoose.model( 'Comment8'),mongoose.model( 'Comment9'),mongoose.model( 'Comment10'),mongoose.model( 'Comment11'),mongoose.model( 'Comment12'),mongoose.model( 'Comment13'),mongoose.model( 'Comment14')];
 
 exports.index = function ( req, res ){
-  Comment.find( function ( err, comments, count ){
+
     res.render( 'page_all', {
-        title : 'Comment System with Mongoose and Node',
-        comments : comments
+        title : 'Daily Data Insights: Showroom'
     });
-  });
+
 }; 
 
 exports.page_about = function ( req, res ){
-    Comment.find( function ( err, comments, count ){
     res.render( 'page_about', {
-        title : 'Daily Data Insights: about',
-        comments : comments
+        title : 'Daily Data Insights: About'
     });
-  });
+
 };
 
 exports.page_create = function ( req, res ){
-    Comment2.find( function ( err, comments, count ){
         res.render( 'page_create', {
-            title : 'Daily Data Insights: about',
+            title : 'Daily Data Insights: Create'
+        });
+};
+
+exports.insight = function ( req, res ){
+    console.log(req.param.id);
+    console.log(commentArray[req.params.id]);
+    commentArray[req.params.id].find( function ( err, comments, count ){
+        res.render( 'one/'+req.params.id, {
+            title : 'Daily Data Insights: '+req.params.id,
             comments : comments
         });
     });
@@ -118,11 +123,3 @@ exports.create = function ( req, res ){
 
 
 
-exports.insight = function ( req, res ){
-    commentArray[req.params.id].find( function ( err, comments, count ){
-        res.render( 'one/'+req.params.id, {
-            title : 'Daily Data Insights: '+req.params.id,
-            comments : comments
-        });
-    });
-};
