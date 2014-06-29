@@ -4,8 +4,8 @@ html(xmlns="http://www.w3.org/1999/xhtml")
         meta(http-equiv="content-type", content="text/html;charset=utf-8")
         link(href="../css/tipsy.css", rel="stylesheet", type="text/css")
         link(rel="stylesheet", href="../css/styleZen.css", type="text/css")
-        link(rel="stylesheet", href="../css/1.css", type="text/css")
-
+        link(rel="stylesheet", href="../css/3.css", type="text/css")
+        link(rel="stylesheet", href="../commons/novus-nvd3-6616c9e/src/nv.d3.css", type="text/css")
         link(rel="shortcut icon", href="../img/favicon.ico")
         link(rel="shortcut icon", href="../commons/bootstrap-3.1.1/css/bootstrap.css")
         link(rel="stylesheet", href="../css/bootstrapSubset.css")
@@ -15,6 +15,19 @@ html(xmlns="http://www.w3.org/1999/xhtml")
     script(type="text/javascript", src="../js/jquery.tipsy.js")
     script(src="../commons/d3.v3.min.js", charset="utf-8")
     script(src="../commons/bootstrap-3.1.1/js/bootstrap.js", charset="utf-8")
+
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/lib/d3.v3.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/nv.d3.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/utils.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/models/axis.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/tooltip.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/interactiveLayer.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/models/legend.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/models/axis.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/models/scatter.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/models/historicalBar.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/models/linePlusBarChart.js")
+
     body
         .containerOne
             .top(style="text-align: !left; margin-bottom: -30px; margin-top: 10px; opacity: 0.5", onmouseover="this.style.opacity='1'; document.getElementById('menuItems').style.opacity='1'; document.getElementById('quotes').style.display='none';  document.getElementById('menuItems').style.display='block' ", onmouseout="this.style.opacity='0.5';document.getElementById('menuItems').style.opacity='0'; document.getElementById('menuItems').style.display='none'; document.getElementById('quotes').style.display='block'; ")
@@ -29,12 +42,12 @@ html(xmlns="http://www.w3.org/1999/xhtml")
                             |  :: 
                             a(style='color: rgb(153,0,0);', href='/create/') create
                         blockquote#quotes(style='margin-top: -40px; padding-top: 20px; display: block;')
-                            
+
 
             #content
 
             article
-                table
+                table(style="width: 100%")
                     tr
                         td
 
@@ -52,67 +65,32 @@ html(xmlns="http://www.w3.org/1999/xhtml")
                             div#insightBadges(style="display:block; float: right;")
                                 img(src="../img/badgeInteractive.png", title="This visualisation is interactive.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
                                 img(src="../img/badgeTop.png", title="This visualisation is or has been voted amongst the top 5 visualisations of this page.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
-                    tr
-                        td(colspan="2")
-                            #contentSVG
-                            p(style="color:rgb(9,106,156); margin-top: 10px;font-style:italic ") Hover over logos to see exact values.
+
+                #contentSVG(style="margin-left: -20px;")
+                div#insightDescription(style="margin-top: 30;")
+                    div(style="margin-top: -40px;margin-bottom: 40px; ")
+                        p(style="color:rgb(9,106,156);font-style:italic")
+                            | Hover over the blue line to see the birth count for the day or over the green bars for a specific month. 
+                            br
+                            | Hide/ display one of the dimensions by clicking on their names in the legend.
+                table(style="width: 100%")
                     tr
                         td(colspan="2", style="opacity: 0.8", onmouseover="this.style.opacity='1'; ", onmouseout="this.style.opacity='0.8'; ")
-                            div#insightDescription(style="margin-top: 30;")                                                      
-                                p Overview of Europe's major football club champions.
-                                p
-                                    | In Spain, 
-                                    strong(style='font-weight: bold;') Real Madrid
-                                    |  leads the field with 32 championships, followed by 
-                                    strong(style='font-weight: bold;') FC Barcelona
-                                    |  and 
-                                    strong(style='font-weight: bold;') Atlético Madrid
-                                    | .
 
+                                p 
+                                    strong(style='font-weight: bold;') Does when you are born matter? 
                                     br
-                                    | The English Premiere League which is the oldest football league in Europe (founded in 1888) has also the most even distribution of championships with 
-                                    strong(style='font-weight: bold;') Manchester United
-                                    |  just leading two ahead of 
-                                    strong(style='font-weight: bold;') FC Liverpool
-                                    | . 
-                                    strong(style='font-weight: bold;') Arsenal London
-                                    |  comes in third with 13 championships.
-
+                                    |  Based on over 200000 biographies of "notable" people with Wikipedia entries, the answer - at least for the month - is: no. 
                                     br
-                                    strong(style='font-weight: bold;') FC Bayern Munich
-                                    |  is the undisputed German Bundesliga champion, leading 15 championships in front of 
-                                    strong(style='font-weight: bold;') 1.FC Nuremberg
-                                    |  which could not win another championship since 45 years - only 
-                                    strong(style='font-weight: bold;') Borussia Dortmund
-                                    |  being a rival in recent years.
-
+                                    |  However, for a specific day, one could argue that being born on the 1st March, the chances of getting a Wikipedia entry double (53.54%). In contrast, for the 26th December, you are 18% less likely to receive one. The average birth count per day is 579.2
                                     br
-                                    strong(style='font-weight: bold;') Juventus Turin
-                                    |  leads the Italian Serie A. Followed by two clubs from Milan - 
-                                    strong(style='font-weight: bold;') Internazionale 
-                                    |  and 
-                                    strong(style='font-weight: bold;') AC Milan
-                                    | .
-
-                                    br
-                                    | The French Ligue 1, counting from the professional era (1932-), has currently two leaders: 
-                                    strong(style='font-weight: bold;') Saint-Etienne 
-                                    |  and 
-                                    strong(style='font-weight: bold;') Marseille
-                                    | . It should be noted that from 2002 until 2008, 
-                                    strong(style='font-weight: bold;') Lyon
-                                    |  won the championship every year - making them the newcomer in the all-time top five. 
-
+                                    | The general probability of ever having your biography on Wikipedia is below 1%.
                                     div(style='float:left;')
-                                        | Sources:
-                                        a(title='http://en.wikipedia.org/wiki/List_of_Spanish_football_champions' href='http://en.wikipedia.org/wiki/List_of_Spanish_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [1]
-                                        a(title='http://en.wikipedia.org/wiki/List_of_English_football_champions' href='http://en.wikipedia.org/wiki/List_of_English_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [2]
-                                        a(title='http://en.wikipedia.org/wiki/List_of_German_football_champions' href='http://en.wikipedia.org/wiki/List_of_German_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [3]
-                                        a(title='http://en.wikipedia.org/wiki/List_of_Italian_football_champions' href='http://en.wikipedia.org/wiki/List_of_Italian_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [4]
-                                        a(title='http://en.wikipedia.org/wiki/List_of_French_football_champions' href='http://en.wikipedia.org/wiki/List_of_French_football_champions', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [5]
+                                        | Source:
+                                        a(title='http://dumps.wikimedia.org/enwiki/' href='http://dumps.wikimedia.org/enwiki/', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [1]
+
                                     div#postDate(style='float:right;')
                                         img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
-
                     tr
                         td(colspan="2")
                             a(name='commentSection')
@@ -123,7 +101,7 @@ html(xmlns="http://www.w3.org/1999/xhtml")
                             block content
 
                                 div.addCommentForms(style="clear: both;")
-                                    form( method="post", action="/create/1")
+                                    form( method="post", action="/create/3")
                                         div
                                             div
                                                 input.form-control(style="background: #f9f9f9; margin-top: 10px;",type="text", class="nameTxt", name="username",placeholder='Name')
@@ -147,5 +125,5 @@ html(xmlns="http://www.w3.org/1999/xhtml")
 
 
 
-        script(type="text/javascript", src="../js/1.js")
+        script(type="text/javascript", src="../js/3.js")
         script(type="text/javascript", src="../js/allInsights.js")
