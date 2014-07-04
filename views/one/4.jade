@@ -1,0 +1,226 @@
+html(xmlns="http://www.w3.org/1999/xhtml")
+    head
+        title  Daily Data Insights 
+        meta(http-equiv="content-type", content="text/html;charset=utf-8")
+        link(href="../css/tipsy.css", rel="stylesheet", type="text/css")
+        link(rel="stylesheet", href="../css/styleZen.css", type="text/css")
+        link(rel="stylesheet", href="../css/3.css", type="text/css")
+        link(rel="stylesheet", href="../commons/novus-nvd3-6616c9e/src/nv.d3.css", type="text/css")
+        link(rel="shortcut icon", href="../img/favicon.ico")
+        link(rel="shortcut icon", href="../commons/bootstrap-3.1.1/css/bootstrap.css")
+        link(rel="stylesheet", href="../css/bootstrapSubset.css")
+        link(rel='stylesheet', type='text/css', href='../commons/DataTables-1.10.0/media/css/jquery.dataTables.css')
+    
+    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+    script(type="text/javascript", src="../js/jquery.infinitescroll.js")
+    script(type="text/javascript", src="../js/manual-trigger.js")
+    script(type="text/javascript", src="../js/jquery.tipsy.js")
+    script(src="../commons/d3.v3.min.js", charset="utf-8")
+    script(src="../commons/bootstrap-3.1.1/js/bootstrap.js", charset="utf-8")        
+    script(type='text/javascript', language='javascript', src='../commons/DataTables-1.10.0/media/js/jquery.js')
+    script(type='text/javascript', language='javascript', src='../commons/DataTables-1.10.0/media/js/jquery.dataTables.js')
+
+
+    body
+        .containerOne
+            .top(style="text-align: !left; margin-bottom: -30px; margin-top: 10px; opacity: 0.5", onmouseover="this.style.opacity='1'; document.getElementById('menuItems').style.opacity='1'; document.getElementById('quotes').style.display='none';  document.getElementById('menuItems').style.display='block' ", onmouseout="this.style.opacity='0.5';document.getElementById('menuItems').style.opacity='0'; document.getElementById('menuItems').style.display='none'; document.getElementById('quotes').style.display='block'; ")
+                div(style='height: 180; margin-bottom: 100px;')
+                    h1
+                        a(href='/')
+                            img(style='margin-bottom: 30px; margin-right: 20px;', src='../img/wikivisLogo.png', title='Daily Data Insights - Applied Data Science', height='150', width='150')
+                        #menuItems(style='margin-bottom: 74px; margin-top: -40px; display: none; opacity: 0; padding-top: 20px;')
+                            a(style='color: rgb(54,154,104);', href='/about/') about
+                            |  :: 
+                            a(style='color: rgb(9,106,156);', href='/') showroom
+                            |  :: 
+                            a(style='color: rgb(153,0,0);', href='/create/') create
+                        blockquote#quotes(style='margin-top: -40px; padding-top: 20px; display: block;')
+
+
+            #content
+
+            article
+                table(style="width: 100%")
+                    tr
+                        td
+
+                            div(style="float:left")
+                                div#upVoteDiv
+                                    img(src="../img/up.svg", title="This visualisation shows research effort; it is clear and appropriate", height="39", style="cursor: pointer; margin-bottom: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="upVote(1)")
+                                div(style="text-align: center; opacity:0.5; width:45px")
+                                    span#points
+                                        img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+                                div#downVoteDiv
+                                    img(src="../img/down.svg", title="This visualisation does not show research effort; it is not clear or inappropriate", height="39", style="cursor: pointer; margin-top: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="downVote(1)")
+                            h2#insightTitle(style=" text-align: left; margin-top: 26px; margin-left: 60px; opacity: 0.8")
+                                | *** loading title ***
+                        td(style="opacity: 0.5", width="140px")
+                            div#insightBadges(style="display:block; float: right;")
+                                img(src="../img/badgeInteractive.png", title="This visualisation is interactive.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+                                img(src="../img/badgeTop.png", title="This visualisation is or has been voted amongst the top 5 visualisations of this page.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+
+                #contentSVG(style="margin-left: -20px;")
+                    img(src="../img/wikipersonOccupation.svg" height="550px" );
+                div#insightDescription(style="margin-top: 30;")
+                    div(style="margin-top: -40px;margin-bottom: 40px; ")
+                        p(style="color:rgb(9,106,156);font-style:italic")
+                            | Zoom in, SVG is scalable! 
+                            br
+                            | Search and sort the table below:
+                table(style="width: 100%")
+                    tr
+                        td(colspan="2", style="opacity: 0.8", onmouseover="this.style.opacity='1'; ", onmouseout="this.style.opacity='0.8'; ")
+
+                            .containerre
+                                section
+                                    table#example.display(cellspacing='0', width='100%',)
+                                        thead(style="vertical-align: bottom;")
+                                            tr(style="vertical-align: bottom;")
+                                                th(style='text-align: left; vertical-align: bottom;') Rank
+                                                th(style='text-align: left; vertical-align: bottom;') Profession
+                                                th(style='text-align: left; vertical-align: bottom;') Total
+                                        tbody(styke="margin-bottom: 20px")
+                                            tr
+                                                td 1
+                                                td Politician
+                                                td 25380
+                                            tr
+                                                td 2
+                                                td Musician
+                                                td 6437
+                                            tr
+                                                td 3
+                                                td Artist
+                                                td 3754
+                                            tr
+                                                td 4
+                                                td Writer
+                                                td 3549
+                                            tr
+                                                td 5
+                                                td Baseball player
+                                                td 3546
+                                            tr
+                                                td 6
+                                                td Hockey player
+                                                td 2927
+                                            tr
+                                                td 7
+                                                td Footballer
+                                                td 2550
+                                            tr
+                                                td 8
+                                                td Singer
+                                                td 2294
+                                            tr
+                                                td 9
+                                                td Cricketer
+                                                td 1847
+                                            tr
+                                                td 10
+                                                td Composer
+                                                td 1844
+                                            tr
+                                                td 11
+                                                td Journalist
+                                                td 1802
+                                            tr
+                                                td 12
+                                                td Basketball player
+                                                td 1782
+                                            tr
+                                                td 13
+                                                td Racing driver
+                                                td 1749
+                                            tr
+                                                td 14
+                                                td Athletics (sport) competitor
+                                                td 1695
+                                            tr
+                                                td 15
+                                                td Actor
+                                                td 1517
+                                            tr
+                                                td 16
+                                                td Businessman
+                                                td 1405
+                                            tr
+                                                td 17
+                                                td Painter
+                                                td 1347
+                                            tr
+                                                td 18
+                                                td Actress
+                                                td 1291
+                                            tr
+                                                td 19
+                                                td General
+                                                td 1182
+                                            tr
+                                                td 20
+                                                td Mathematician
+                                                td 1164
+
+                            p 
+                                strong(style='font-weight: bold;') What jobs do people with Wikipedia entries have? 
+                                br
+                                |  Based on over 230000 biographies of "notable" people with (English) Wikipedia entries, the leading profession is: 
+                                span(style='font-style: italic;') Politician
+                                | .
+                                br
+                                |  Trailing far behind on the second place are 
+                                span(style='font-style: italic;') Musicians
+                                | . The third, fourth and fifth positions are close together:      
+                                span(style='font-style: italic;')  Artists       
+                                | , 
+                                span(style='font-style: italic;')  Writers
+                                |  and surprisingly 
+                                span(style='font-style: italic;')  Baseball players
+                                | .
+                            
+                                div(style='float:left;')
+                                    | Source:
+                                    a(title='http://dumps.wikimedia.org/enwiki/' href='http://dumps.wikimedia.org/enwiki/', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [1]
+                            
+                                div#postDate(style='float:right;')
+                                    img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+
+                                div(style="clear: both; padding-top:20px; margin-bottom:-40px; color: rgb(54,154,104);")
+                                    p(style=" color: rgb(54,154,104);")
+                                        | See also: 
+                                        a(title='http://www.dailydatainsights.com/3' href='http://www.dailydatainsights.com/3', style='color: rgb(54,154,104); text-decoration: underline', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';') Birthday Distribution of Wikipeople
+                    tr
+                        td(colspan="2")
+                            a(name='commentSection')
+                            div(style="border-top: 1px solid #e7e7e7; margin-top: 70px; margin-bottom: 10px;")
+                            h3(style="float: left; margin-bottom: 30px;margin-top: 10px;") Leave a comment
+
+
+                            block content
+
+                                div.addCommentForms(style="clear: both;")
+                                    form( method="post", action="/create/4")
+                                        div
+                                            div
+                                                input.form-control(style="background: #f9f9f9; margin-top: 10px;",type="text", class="nameTxt", name="username",placeholder='Name')
+                                            div
+                                                textarea.form-control(style="background: #f9f9f9; margin-top: 11px;",placeholder='Comment', rows='3', name='comment')
+                                            div#addCommentSubmit
+                                                input.btn.btn-default.btn-outline(style="margin-top: 10px;", type="submit", value="Submit")
+                                br
+                                br
+                                #commentsSorted
+                                #comments
+                                    - each comment in comments
+                                        div.comment
+                                            h4
+                                                div.name(style="float:left; font-weight: bold;")= comment.username
+                                                small
+                                                    div(style="float:right").created_at= comment.created
+                                            br
+                                            div.content(style="clear: both; padding-top: 5px;")= comment.content
+                                            hr
+
+
+        script(type="text/javascript", src="../js/4.js")
+        script(type="text/javascript", src="../js/allInsights.js")

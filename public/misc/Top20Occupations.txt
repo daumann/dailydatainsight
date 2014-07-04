@@ -1,0 +1,20 @@
+Mathematician	1164
+General	1182
+Actress	1291
+Painter	1347
+Businessman	1405
+Actor	1517
+Athletics (sport) competitor	1695
+Racing driver	1749
+Basketball player	1782
+Journalist	1802
+Composer	1844
+Cricketer	1847
+Singer	2294
+Footballer	2550
+Hockey player	2927
+Baseball player	3546
+Writer	3549
+Artist	3754
+Musician	6437
+Politician	25380
