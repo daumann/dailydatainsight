@@ -41,6 +41,9 @@ app.get('/create', routes.page_create);
 app.get('/:id', routes.insight);
 
 app.post( '/create/:id', routes.create );
+
+//app.post( '/ratingChanged/:id/:type', routes.rate );
+
 app.post( '/vote/:id/:type', routes.vote );
 
 // GET
