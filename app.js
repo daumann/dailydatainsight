@@ -42,9 +42,11 @@ app.get('/:id', routes.insight);
 
 app.post( '/create/:id', routes.create );
 
-//app.post( '/ratingChanged/:id/:type', routes.rate );
+app.post( '/ratingChanged/:id/:type', routes.rate );
 
-app.post( '/vote/:id/:type', routes.vote );
+// app.post( '/vote/:id/:type', routes.vote );
+
+app.get('/getMeta/:id', routes.getMeta );
 
 // GET
 

@@ -13,7 +13,6 @@ var commentArray = [mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoo
 
 
 /* iterate thru list and initialize if not there */
-
 var fs = require('fs');
 var Converter=require("csvtojson").core.Converter;
 var json2csv = require('nice-json2csv');
@@ -44,17 +43,26 @@ csvConverter.on("end_parsed",function(jsonObj){
 
 
      //   var runningID = 0;
-        console.log("Checking for articleID: " + k + " -> "+jsonObj[k].id);
+        console.log("Checking for id: " + k + " -> "+jsonObj[k].id);
 
-        ArticleModel.find({ articleID: jsonObj[k].id }, function(err, foundArticles) {
+        ArticleModel.find({ id: jsonObj[k].id }, function(err, foundArticles) {
             console.log("In with runningID = : " + runningID);
 
             if (err) { console.log(err); }
 
             if (foundArticles.length == 0){
+                console.log("Inside found nothing");
                 var Yuengling = new ArticleModel({
-                    articleID: jsonObj[runningID].id,
-                    rating: jsonObj[runningID].points
+                    id: jsonObj[runningID].id,
+                    points: jsonObj[runningID].points,
+                    id       : jsonObj[runningID].id,
+                    rating      : jsonObj[runningID].rating,
+                    commentsCount : jsonObj[runningID].commentsCount,
+                    date: jsonObj[runningID].date,
+                    contentThumbURL: jsonObj[runningID].contentThumbURL,
+                    subtitle: jsonObj[runningID].subtitle,
+                    title: jsonObj[runningID].title
+                    
                 });
                 Yuengling.save(function(err){
                     if (err) { console.log(err); }
@@ -66,6 +74,8 @@ csvConverter.on("end_parsed",function(jsonObj){
 
         });
 
+
+        // todo: integrate with upvote/downvote - build with this document - sort with this document.
         /*
         console.log(jsonObj[k].id  +'vs'+insightID)
         if (jsonObj[k].id == insightID) {
@@ -89,25 +99,33 @@ fs.createReadStream(csvFileName).pipe(csvConverter);
 
 
 
-// increase, decrease rating!
+// increase, decrease points!
 
 
 
  exports.rate = function ( req, res ){
-     console.log(req.params.type + "-rating article "+req.params.id)
+     console.log(req.params.type + "-points article "+req.params.id)
 
-     ArticleModel.find({ articleID: req.params.id }, function(err, articles) {
+     ArticleModel.find({ id: req.params.id }, function(err, articles) {
          if(req.params.type  == "up"){
              articles.forEach(function(selectedArticle){
                  selectedArticle.increaseRating();
-                 console.log("increased rating of: " + selectedArticle);
+                 selectedArticle.save(function(err){
+                     if (err) { console.log(err); }
+                     else {/*console.log("Article updated:" + selectedArticle)*/}
+                 });
+                 console.log("increased points of: " + selectedArticle);
 
              });
          }
          if (req.params.type  == "down"){
              articles.forEach(function(selectedArticle){
                  selectedArticle.decreaseRating();
-                 console.log("decreased rating of: " + selectedArticle);
+                 selectedArticle.save(function(err){
+                     if (err) { console.log(err); }
+                     else {/*console.log("Article updated:" + selectedArticle)*/}
+                 });
+                 console.log("decreased points of: " + selectedArticle);
 
              });
          }
@@ -139,6 +157,7 @@ exports.page_create = function ( req, res ){
 };
 
 
+/*
 exports.vote = function ( req, res ){
     
     console.log(req.params.type + "vote for id "+req.params.id)
@@ -200,9 +219,19 @@ exports.vote = function ( req, res ){
 fs.createReadStream(csvFileName).pipe(csvConverter);
 
 }
-
+*/
 
 // similar to this?
+exports.getMeta = function(req, res) {
+        console.log("inside getTest")
+    ArticleModel.find({ }, function(err, ArticleMeta) {
+        res.send((ArticleMeta));
+    });
+
+
+};
+
+
 
 exports.insight = function ( req, res ){
     console.log(req.param.id);

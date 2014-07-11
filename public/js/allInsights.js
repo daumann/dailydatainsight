@@ -8,7 +8,8 @@ d3.tsv('articleArchiv/quotes.csv', function (error, allQuotes) {
 
 });
 
-d3.csv('articleArchiv/articles.csv', function (error, allArticles) {
+//d3.csv('articleArchiv/articles.csv', function (error, allArticles) {
+    $.get('/getMeta/2').done(function(allArticles){
 
     //geoData = { type: "FeatureCollection", features: reformat(allArticles) };
     console.debug(allArticles);
@@ -130,7 +131,7 @@ function upVote(id){
     if (localStorage.getItem(id) != 1) {
         localStorage.setItem(id, 1);
 
-        $.post('/vote/' + id + '/up', function () {
+        $.post('/ratingChanged/' + id + '/up', function () {
         });
 
         event.srcElement.parentElement.nextElementSibling.firstChild.innerHTML = parseInt(event.srcElement.parentElement.nextElementSibling.firstChild.innerHTML) + 1;
@@ -142,7 +143,7 @@ function downVote(id){
     if (localStorage.getItem(id) != 1) {
         localStorage.setItem(id, 1);
 
-        $.post('/vote/' + id + '/down', function () {
+        $.post('/ratingChanged/' + id + '/down', function () {
         });
 
         event.srcElement.parentElement.previousElementSibling.firstChild.innerHTML = parseInt(event.srcElement.parentElement.previousElementSibling.firstChild.innerHTML) - 1;

@@ -14,23 +14,29 @@ var RatingSchema = new Schema({
 
 
 Article = new Schema({
-    articleID       : Number,
-    rating      : Number
+    id       : Number,
+    points      : Number,
+    commentsCount : Number,
+    date: String,
+    contentThumbURL: String,
+    subtitle: String,
+    title: String
+
 }).method('increaseRating', function(){
-        this.rating += 1;
-        return this.rating;
+        this.points += 1;
+        return this.points;
     }).method('decreaseRating', function(){
-        this.rating -= 1;
-        return this.rating;
+        this.points -= 1;
+        return this.points;
     });
 
 /**
- * Increase rating of Yuengling
+ * Increase points of Yuengling
  */
 //Yuengling.increaseRating();
 
 /**
- * Decrese rating of Yuengling
+ * Decrese points of Yuengling
  */
 //Yuengling.decreaseRating();
 
