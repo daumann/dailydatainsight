@@ -1,0 +1,30 @@
+#yText {
+    font: 12px sans-serif;
+
+}
+
+.axispath,
+.domain,
+.axisline {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axispath {
+    display: none;
+}
+
+.areaabove {
+    fill: rgba(153, 0, 0, 0.70);
+}
+
+.areabelow {
+    fill: rgba(54, 154, 104, 0.71);
+}
+
+.line {
+    fill: none;
+    stroke: #000;
+    stroke-width: 1.5px;
+}

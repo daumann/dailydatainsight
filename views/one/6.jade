@@ -1,0 +1,767 @@
+html(xmlns="http://www.w3.org/1999/xhtml")
+    head
+        title Daily Data Insights - Mixed data findings around the globe!
+        link(rel='image_src', href='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        link(rel='publisher', href='https://plus.google.com/u/0/100387325869371041986')
+        link(rel='canonical', href='http://dailydatainsights.com/')
+        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+        meta(name='keywords', content='data science,data visualization,data findings,interesting facts,data mining,facts,dietmar aumann')
+        meta(name='description', content='Daily Data Insights brings you data findings and data visualization on topics around the globe. DDI is regularly updated and supports the ranking of articles. Check out DDI now!')
+        meta(name='robots', content='noodp')
+        meta(name='twitter:site', content='@DaDaInsights')
+        meta(name='twitter:image', content='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        meta(property='og:title', content='Applied Data Science')
+        meta(property='og:site_name', content='Daily Data Insights')
+        meta(property='og:url', content='http://dailydatainsights.com/')
+        meta(property='og:description', content='Data findings and data visualization on topics around the globe!')
+        meta(property='og:type', content='blog')
+        meta(property='og:image', content='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        meta(property='fb:app_id', content='313302612167180')
+        meta(http-equiv="content-type", content="text/html;charset=utf-8")
+        link(href="../css/tipsy.css", rel="stylesheet", type="text/css")
+        link(rel="stylesheet", href="../css/styleZen.css", type="text/css")
+        link(rel="stylesheet", href="../commons/novus-nvd3-6616c9e/src/nv.d3.css", type="text/css")
+        link(rel="shortcut icon", href="../img/favicon.ico")
+        link(rel="shortcut icon", href="../commons/bootstrap-3.1.1/css/bootstrap.css")
+        link(rel="stylesheet", href="../css/bootstrapSubset.css")
+        link(rel="stylesheet", href="../css/6.css", type="text/css")
+    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+    script(type="text/javascript", src="../js/jquery.infinitescroll.js")
+    script(type="text/javascript", src="../js/manual-trigger.js")
+    script(type="text/javascript", src="../js/jquery.tipsy.js")
+    script(src="../commons/d3.v3.min.js", charset="utf-8")
+    script(src="../commons/bootstrap-3.1.1/js/bootstrap.js", charset="utf-8")
+
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/lib/d3.v3.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/nv.d3.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/utils.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/models/axis.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/tooltip.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/interactiveLayer.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/models/legend.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/models/axis.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/models/scatter.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/models/historicalBar.js")
+    script(type="text/javascript", src="../commons/novus-nvd3-6616c9e/src/models/linePlusBarChart.js")
+
+    body
+        .containerOne
+            .top(style="text-align: !left; margin-bottom: -30px; margin-top: 10px; opacity: 0.5", onmouseover="this.style.opacity='1'; document.getElementById('menuItems').style.opacity='1'; document.getElementById('quotes').style.display='none';  document.getElementById('menuItems').style.display='block' ", onmouseout="this.style.opacity='0.5';document.getElementById('menuItems').style.opacity='0'; document.getElementById('menuItems').style.display='none'; document.getElementById('quotes').style.display='block'; ")
+                div(style='height: 180; margin-bottom: 100px;')
+                    h1
+                        a(href='/')
+                            img(style='margin-bottom: 30px; margin-right: 20px;', src='../img/wikivisLogo.png', title='Daily Data Insights - Applied Data Science', height='150', width='150')
+                        #menuItems(style='margin-bottom: 74px; margin-top: -40px; display: none; opacity: 0; padding-top: 20px;')
+                            a(style='color: rgb(54,154,104);', href='/about/') about
+                            |  :: 
+                            a(style='color: rgb(9,106,156);', href='/') showroom
+                            |  :: 
+                            a(style='color: rgb(153,0,0);', href='/create/') create
+                        blockquote#quotes(style='margin-top: -40px; padding-top: 20px; display: block;')
+
+
+            #content
+
+            article
+                table(style="width: 100%")
+                    tr
+                        td
+
+                            div(style="float:left")
+                                div#upVoteDiv
+                                    img(src="../img/up.svg", title="This visualisation shows research effort; it is clear and appropriate", height="39", style="cursor: pointer; margin-bottom: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="upVote(1)")
+                                div(style="text-align: center; opacity:0.5; width:45px")
+                                    span#points
+                                        img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+                                div#downVoteDiv
+                                    img(src="../img/down.svg", title="This visualisation does not show research effort; it is not clear or inappropriate", height="39", style="cursor: pointer; margin-top: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="downVote(1)")
+                            h2#insightTitle(style=" text-align: left; margin-top: 26px; margin-left: 60px; opacity: 0.8")
+                                | *** loading title ***
+                        td(style="opacity: 0.5", width="140px")
+                            div#insightBadges(style="display:block; float: right;")
+                                img(src="../img/badgeInteractive.png", title="This visualisation is interactive.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+                                img(src="../img/badgeTop.png", title="This visualisation is or has been voted amongst the top 5 visualisations of this page.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+
+                #contentSVG
+                    svg#rSVG
+                        br
+                        select#selectedA.form-control(style="float: left; width: 40%")
+                            option(value='ABTIRANA.txt') Albania - Tirana
+                            option(value='AGBUENOS.txt') Argentina - Buenos Aires
+                            option(value='ALALGIER.txt') Algeria - Algiers
+                            option(value='AUBRSBAN.txt') Australia - Brisbane
+                            option(value='AUCNBERA.txt') Australia - Canberra
+                            option(value='AUMELBRN.txt') Australia - Sydney
+                            option(value='AUPERTH.txt') Australia - Perth
+                            option(value='AUSYDNEY.txt') Australia - Melbourne
+                            option(value='BANASSAU.txt') Bahamas - Nassau
+                            option(value='BHBELIZE.txt') Belize - Belize City
+                            option(value='BJCOTNOU.txt') Benin - Cotonou
+                            option(value='BMRNGOON.txt') Burma - Rangoon
+                            option(value='BNMANAMA.txt') Bahrain - Manama
+                            option(value='BOLAPAZ.txt') Bolivia - La Paz
+                            option(value='BRBRGTWN.txt') Barbados - Bridgetown
+                            option(value='BUSOFIA.txt') Bulgaria - Sofia
+                            option(value='BXBRUSSL.txt') Belgium - Brussels
+                            option(value='BYMINSK.txt') Belarus - Minsk
+                            option(value='BZBRSLIA.txt') Brazil - Brasilia
+                            option(value='BZRIODJN.txt') Brazil - Rio de Janeiro
+                            option(value='BZSAOPLO.txt') Brazil - Sao Paulo
+                            option(value='CEBANGUI.txt') Central African Republic - Bangui
+                            option(value='CGBRZAVL.txt') Congo - Brazzaville
+                            option(value='CIBIEJNG.txt') China - Beijing
+                            option(value='CICHNGDU.txt') China - Chengdu
+                            option(value='CIGNGZHO.txt') China - Guangzhou
+                            option(value='CISHANGH.txt') China - Shanghai
+                            option(value='CISHNYNG.txt') China - Shenyang
+                            option(value='CNCALGRY.txt') Canada - Calgary
+                            option(value='CNEDMNTN.txt') Canada - Edmonton
+                            option(value='CNHLIFAX.txt') Canada - Halifax
+                            option(value='CNOTTOWA.txt') Canada - Ottawa
+                            option(value='CNQUEBEC.txt') Canada - Quebec
+                            option(value='CNREGINA.txt') Canada - Regina
+                            option(value='CNTORONT.txt') Canada - Toronto
+                            option(value='CNVANCVR.txt') Canada - Vancouver
+                            option(value='CNWINNPG.txt') Canada - Winnipeg
+                            option(value='COBOGOTA.txt') Colombia - Bogota
+                            option(value='CSSANJOS.txt') Costa Rica - San Jose
+                            option(value='CUHAVANA.txt') Cuba - Havana
+                            option(value='CZBRTSLV.txt') Slovakia - Bratislava
+                            option(value='CZPRAGUE.txt') Czech Republic - Prague
+                            option(value='DLMUNICH.txt') Germany - Munich
+                            option(value='DNCOPNHG.txt') Denmark - Copenhagen
+                            option(value='DRSNTODM.txt') Dominican Republic - Santo Domingo
+                            option(value='EGCAIRO.txt') Egypt - Cairo
+                            option(value='EQGUAYQL.txt') Equador - Guayaquil
+                            option(value='EQQUITO.txt') Equador - Quito
+                            option(value='ERABUDBI.txt') United Arab Emirates - Abu Dhabi
+                            option(value='ERDUBAI.txt') United Arab Emirates - Dubai
+                            option(value='ETADSABA.txt') Ethiopia - Addis Ababa
+                            option(value='FIHELSIN.txt') Finland - Helsinki
+                            option(value='FRBRDAUX.txt') France - Bordeaux
+                            option(value='FRPARIS.txt') France - Paris
+                            option(value='GBBANJUL.txt') Gambia - Banjul
+                            option(value='GNCONKRY.txt') Guinea - Conakry
+                            option(value='GOLIBRVL.txt') Gabon - Libreville
+                            option(value='GUGUATML.txt') Guatemala - Guatemala City
+                            option(value='GWBISSAU.txt') Guinea-Bissau - Bissau
+                            option(value='HAPORTAP.txt') Haiti - Port au Prince
+                            option(value='HKHONGKG.txt') Hong Kong - Hong Kong
+                            option(value='HOTEGUCI.txt') Honduras - Tegucigalpa
+                            option(value='HUBUDPST.txt') Hungary - Budapest
+                            option(value='IDJAKRTA.txt') Indonesia - Jakarta
+                            option(value='IEDUBLIN.txt') Ireland - Dublin
+                            option(value='ILREYKJV.txt') Iceland - Reykjavik
+                            option(value='INBOMBAY.txt') India - Bombay
+                            option(value='INCALCUT.txt') India - Calcutta
+                            option(value='INCHENAI.txt') India - Chenai
+                            option(value='INDELHI.txt') India - Delhi
+                            option(value='IVABIDJN.txt') Ivory Coast - Abidjan
+                            option(value='IYMILAN.txt') Italy - Milan
+                            option(value='IYROME.txt') Italy - Rome
+                            option(value='JDAMMAN.txt') Jordan - Amman
+                            option(value='JPOSAKA.txt') Japan - Osaka
+                            option(value='JPSAPPOR.txt') Japan - Sapporo
+                            option(value='JPTOKYO.txt') Japan - Tokyo
+                            option(value='KNNAIROB.txt') Kenya - Nairobi
+                            option(value='KOSEOUL.txt') South Korea - Seoul
+                            option(value='KRPYGYNG.txt') North Korea - Pyongyang
+                            option(value='KWKUWAIT.txt') Kuwait - Kuwait
+                            option(value='LAVIENTN.txt') Laos - Vientiane
+                            option(value='LBBEIRUT.txt') Lebanon - Beirut
+                            option(value='MCRABAT.txt') Morocco - Rabat
+                            option(value='MGANTRVO.txt') Madagascar - Antananarivo
+                            option(value='MOULNBTR.txt') Mongolia - Ulan-bator
+                            option(value='MSKUALA.txt') Malaysia - Kuala Lumpur
+                            option(value='MTNOKCHT.txt') Mauritania - Nouakchott
+                            option(value='MWLILNGW.txt') Malawi - Lilongwe
+                            option(value='MXGUADLJ.txt') Mexico - Guadalajara
+                            option(value='MXMONTRY.txt') Mexico - Monterrey
+                            option(value='MXMXCITY.txt') Mexico - Mexico City
+                            option(value='MZMAPUTO.txt') Mozambique - Maputo
+                            option(value='NILAGOS.txt') Nigeria - Lagos
+                            option(value='NKMANAGU.txt') Nicaragua -  Managua
+                            option(value='NLAMSTDM.txt') The Netherlands - Amsterdam
+                            option(value='NMWNDHOK.txt') Namibia - Windhoek
+                            option(value='NOOSLO.txt') Norway - Oslo
+                            option(value='NPKTMNDU.txt') Nepal - Katmandu
+                            option(value='NRNIAMEY.txt') Nigeria - Niamey
+                            option(value='NZACKLND.txt') New Zealand - Auckland
+                            option(value='OMMUSCAT.txt') Oman - Muscat
+                            option(value='OSVIENNA.txt') Austria - Vienna
+                            option(value='PHMANILA.txt') Philippines - Manila
+                            option(value='PKISLMBD.txt') Pakistan - Islamabad
+                            option(value='PKKARACH.txt') Pakistan - Karachi
+                            option(value='PLWARSAW.txt') Poland - Warsaw
+                            option(value='PMPANAMA.txt') Panama - Panama City
+                            option(value='POLISBON.txt') Portugal - Lisbon
+                            option(value='PRLIMA.txt') Peru - Lima
+                            option(value='PRSANJUA.txt') Peru - SAN JUAN
+                            option(value='QTDOHA.txt') Qatar - Doha
+                            option(value='RAALMATY.txt') Kazakhstan - Almaty
+                            option(value='RAASHBAD.txt') Turkmenistan - Ashabad
+                            option(value='RABSHKEK.txt') Kyrgyzstan - Bishkek
+                            option(value='RADUSNBE.txt') Tajikistan - Dusanbe
+                            option(value='RATASKNT.txt') Uzbekistan - Tashkent
+                            option(value='ROBCHRST.txt') Romania - Bucharest
+                            option(value='RSMOSCOW.txt') Russia - Moscow
+                            option(value='RSRIGA.txt') Latvia - Riga
+                            option(value='SBCOLMBO.txt') Sri Lanka - Colombo
+                            option(value='SDDHAHRN.txt') Saudi Arabia - Dhahran
+                            option(value='SDRIYADH.txt') Saudi Arabia - Riyadh
+                            option(value='SGDAKAR.txt') Senegal - Dakar
+                            option(value='SMPRMRIB.txt') Suriname - Paramaribo
+                            option(value='SNSTKHLM.txt') Sweden - Stockholm
+                            option(value='SPBILBAO.txt') Spain - Bilbao
+                            option(value='SPBRCLNA.txt') Spain - Barcelona
+                            option(value='SPMADRID.txt') Spain - Madrid
+                            option(value='SRSINGAP.txt') Singapore - Singapore
+                            option(value='SWBERN.txt') Switzerland - Bern
+                            option(value='SWGENEVA.txt') Switzerland - Geneva
+                            option(value='SWZURICH.txt') Switzerland - Zurich
+                            option(value='SYDMSCUS.txt') Syria - Damascus
+                            option(value='TGLOME.txt') Togo - Lome
+                            option(value='TNDESALM.txt') Tanzania - Dar Es Salaam
+                            option(value='TSTUNIS.txt') Tunisia - Tunis
+                            option(value='TUANKARA.txt') Turkey - Ankara
+                            option(value='TUISTNBL.txt') Turkey - Istanbul
+                            option(value='TWTAIPEI.txt') Taiwan - Taipei
+                            option(value='UGKAMPAL.txt') Uganda - Kampala
+                            option(value='UKBELFST.txt') United Kingdom - Belfast
+                            option(value='UKLONDON.txt') United Kingdom - London
+                            option(value='URKIEV.txt') Ukraine - Kiev
+                            option(value='UYMNTVID.txt') Uruguay - Montvideo
+                            option(value='AKANCHOR.txt') USA - Alaska - Anchorage
+                            option(value='AKFAIRBA.txt') USA - Alaska - Fairbanks
+                            option(value='AKJUNEAU.txt') USA - Alaska - Juneau
+                            option(value='ALBIRMIN.txt') USA - Alabama - Birmingham
+                            option(value='ALHUNTSV.txt') USA - Alabama - Huntsville
+                            option(value='ALMOBILE.txt') USA - Alabama - Mobile
+                            option(value='ALMONTGO.txt') USA - Alabama - Montgomery
+                            option(value='ARFTSMIT.txt') USA - Arkansas - Fort Smith
+                            option(value='ARLIROCK.txt') USA - Arkansas - Little Rock
+                            option(value='AZPHOENI.txt') USA - Arizona - Phoenix
+                            option(value='AZTUCSON.txt') USA - Arizona - Tucson
+                            option(value='CAFRESNO.txt') USA - California - Fresno
+                            option(value='CALOSANG.txt') USA - California - Los Angeles
+                            option(value='CASACRAM.txt') USA - California - Sacramento
+                            option(value='CASANDIE.txt') USA - California - San Diego
+                            option(value='CASANFRA.txt') USA - California - San Francisco
+                            option(value='COCOSPGS.txt') USA - Colorado - Colorado Springs
+                            option(value='CODENVER.txt') USA - Colorado - Denver
+                            option(value='COGRNDJU.txt') USA - Colorado - Grand Junction
+                            option(value='COPUEBLO.txt') USA - Colorado - Pueblo
+                            option(value='CTBRIDGE.txt') USA - Connecticut - Bridgeport
+                            option(value='CTHARTFO.txt') USA - Connecticut - Hartford Springfield
+                            option(value='FLJACKSV.txt') USA - Florida - Jacksonville
+                            option(value='FLMIAMIB.txt') USA - Florida - Miami Beach
+                            option(value='FLORLAND.txt') USA - Florida - Orlando
+                            option(value='FLTALLAH.txt') USA - Florida - Tallahassee
+                            option(value='FLTAMPA.txt') USA - Florida - Tampa St. Petersburg
+                            option(value='FLWPALMB.txt') USA - Florida - West Palm Beach
+                            option(value='GAATLANT.txt') USA - Georgia - Atlanta
+                            option(value='GACOLMBS.txt') USA - Georgia - Columbus
+                            option(value='GAMACON.txt') USA - Georgia - Macon
+                            option(value='GASAVANN.txt') USA - Georgia - Savannah
+                            option(value='HIHONOLU.txt') USA - Hawaii - Honolulu
+                            option(value='IADESMOI.txt') USA - Iowa - Des Moines
+                            option(value='IASIOCTY.txt') USA - Iowa - Sioux City
+                            option(value='IDBOISE.txt') USA - Idaho - Boise
+                            option(value='IDPOCATE.txt') USA - Idaho - Pocatello
+                            option(value='ILCHICAG.txt') USA - Illinois - Chicago
+                            option(value='ILPEORIA.txt') USA - Illinois - Peoria
+                            option(value='ILROCKFO.txt') USA - Illinois - Rockford
+                            option(value='ILSPRING.txt') USA - Illinois - Springfield
+                            option(value='INEVANSV.txt') USA - Indiana - Evansville
+                            option(value='INFTWAYN.txt') USA - Indiana - Fort Wayne
+                            option(value='ININDIAN.txt') USA - Indiana - Indianapolis
+                            option(value='INSOBEND.txt') USA - Indiana - South Bend
+                            option(value='KSGOODLA.txt') USA - Kansas - Goodland
+                            option(value='KSTOPEKA.txt') USA - Kansas - Topeka
+                            option(value='KSWICHIT.txt') USA - Kansas - Wichita
+                            option(value='KYLEXING.txt') USA - Kentucky - Lexington
+                            option(value='KYLOUISV.txt') USA - Kentucky - Louisville
+                            option(value='KYPADUCA.txt') USA - Kentucky - Paducah
+                            option(value='LALAKECH.txt') USA - Louisiana - Lake Charles
+                            option(value='LANEWORL.txt') USA - Louisiana - New Orleans
+                            option(value='LASHREVE.txt') USA - Louisiana - Shreveport
+                            option(value='MABOSTON.txt') USA - Massachusetts - Boston
+                            option(value='MDBALTIM.txt') USA - Maryland - Baltimore
+                            option(value='MDWASHDC.txt') USA - Maryland - Washington DC
+                            option(value='MECARIBO.txt') USA - Maine - Caribou
+                            option(value='MEPORTLA.txt') USA - Maine - Portland
+                            option(value='MIDETROI.txt') USA - Michigan - Detroit
+                            option(value='MIFLINT.txt') USA - Michigan - Flint
+                            option(value='MIGRNDRA.txt') USA - Michigan - Grand Rapids
+                            option(value='MILANSIN.txt') USA - Michigan - Lansing
+                            option(value='MISTEMAR.txt') USA - Michigan - Sault Ste Marie
+                            option(value='MNDULUTH.txt') USA - Minnesota - Duluth
+                            option(value='MNMINPLS.txt') USA - Minnesota - Minneapolis St. Paul
+                            option(value='MOKANCTY.txt') USA - Missouri - Kansas City
+                            option(value='MOSPRING.txt') USA - Missouri - Springfield
+                            option(value='MOSTLOUI.txt') USA - Missouri - St Louis
+                            option(value='MSJACKSO.txt') USA - Mississippi - Jackson
+                            option(value='MSTUPELO.txt') USA - Mississippi - Tupelo
+                            option(value='MTBILLIN.txt') USA - Montana - Billings
+                            option(value='MTGRFALL.txt') USA - Montana - Great Falls
+                            option(value='MTHELENA.txt') USA - Montana - Helena
+                            option(value='NCASHEVI.txt') USA - North Carolina - Asheville
+                            option(value='NCCHARLO.txt') USA - North Carolina - Charlotte
+                            option(value='NCGRNSBO.txt') USA - North Carolina - Greensboro
+                            option(value='NCRALEIG.txt') USA - North Carolina - Raleigh Durham
+                            option(value='NDBISMAR.txt') USA - North Dakota - Bismarck
+                            option(value='NDFARGO.txt') USA - North Dakota - Fargo
+                            option(value='NELINCOL.txt') USA - Nebraska - Lincoln
+                            option(value='NENPLATT.txt') USA - Nebraska - North Platte
+                            option(value='NEOMAHA.txt') USA - Nebraska - Omaha
+                            option(value='NHCONCOR.txt') USA - New Hampshire - Concord
+                            option(value='NJATLCTY.txt') USA - New Hampshire - Atlantic City
+                            option(value='NJNEWARK.txt') USA - New Hampshire - Newark
+                            option(value='NMALBUQU.txt') USA - New Mexico - Albuquerque
+                            option(value='NVLASVEG.txt') USA - Nevada - Las Vegas
+                            option(value='NVRENO.txt') USA - Nevada - Reno
+                            option(value='NYALBANY.txt') USA - New York - Albany
+                            option(value='NYBUFFAL.txt') USA - New York - Buffalo
+                            option(value='NYNEWYOR.txt' selected) USA - New York - New York City
+                            option(value='NYROCHES.txt') USA - New York - Rochester
+                            option(value='NYSYRACU.txt') USA - New York - Syracuse
+                            option(value='OHAKRON.txt') USA - Ohio - Akron Canton
+                            option(value='OHCINCIN.txt') USA - Ohio - Cincinnati
+                            option(value='OHCLEVEL.txt') USA - Ohio - Cleveland
+                            option(value='OHCOLMBS.txt') USA - Ohio - Columbus
+                            option(value='OHDAYTON.txt') USA - Ohio - Dayton
+                            option(value='OHTOLEDO.txt') USA - Ohio - Toledo
+                            option(value='OHYOUNGS.txt') USA - Ohio - Youngstown
+                            option(value='OKOKLCTY.txt') USA - Oklahoma - Oklahoma City
+                            option(value='OKTULSA.txt') USA - Oklahoma - Tulsa
+                            option(value='OREUGENE.txt') USA - Oregon - Eugene
+                            option(value='ORMEDFOR.txt') USA - Oregon - Medford
+                            option(value='ORPORTLA.txt') USA - Oregon - Portland
+                            option(value='ORSALEM.txt') USA - Oregon - Salem
+                            option(value='PAALLENT.txt') USA - Pennsylvania - Allentown
+                            option(value='PAERIE.txt') USA - Pennsylvania - Erie
+                            option(value='PAPHILAD.txt') USA - Pennsylvania - Philadelphia
+                            option(value='PAPITTSB.txt') USA - Pennsylvania - Pittsburgh
+                            option(value='PAWILKES.txt') USA - Pennsylvania - Wilkes Barre
+                            option(value='RIPROVID.txt') USA - Rhode Island - Rhode Island
+                            option(value='SCCHARLE.txt') USA - South Carolina - Charleston
+                            option(value='SCCOLMBA.txt') USA - South Carolina - Columbia
+                            option(value='SDRAPCTY.txt') USA - South Dakota -Rapid City
+                            option(value='SDSIOFAL.txt') USA - South Dakota -Sioux Falls
+                            option(value='TNCHATTA.txt') USA - Tennessee - Chattanooga
+                            option(value='TNKNOXVI.txt') USA - Tennessee - Knoxville
+                            option(value='TNMEMPHI.txt') USA - Tennessee - Memphis
+                            option(value='TNNASHVI.txt') USA - Tennessee - Nashville
+                            option(value='TXABILEN.txt') USA - Texas - Abilene
+                            option(value='TXAMARIL.txt') USA - Texas - Amarillo
+                            option(value='TXAUSTIN.txt') USA - Texas - Austin
+                            option(value='TXBROWNS.txt') USA - Texas - Brownsville
+                            option(value='TXCORPUS.txt') USA - Texas - Corpus Christi
+                            option(value='TXDALLAS.txt') USA - Texas - Dallas Ft Worth
+                            option(value='TXELPASO.txt') USA - Texas - El Paso
+                            option(value='TXHOUSTO.txt') USA - Texas - Houston
+                            option(value='TXLUBBOC.txt') USA - Texas - Lubbock
+                            option(value='TXMIDLAN.txt') USA - Texas - Midland Odessa
+                            option(value='TXSANANG.txt') USA - Texas - San Angelo
+                            option(value='TXSANANT.txt') USA - Texas - San Antonio
+                            option(value='TXWACO.txt') USA - Texas - Waco
+                            option(value='TXWICHFA.txt') USA - Texas - Wichita Falls
+                            option(value='UTSALTLK.txt') USA - Utah - Salt Lake City
+                            option(value='VANORFOL.txt') USA - Virginia - Norfolk
+                            option(value='VARICHMO.txt') USA - Virginia - Richmond
+                            option(value='VAROANOK.txt') USA - Virginia - Roanoke
+                            option(value='VTBURLIN.txt') USA - Vermont - Burlington
+                            option(value='WASEATTL.txt') USA - Washington - Seattle
+                            option(value='WASPOKAN.txt') USA - Washington - Spokane
+                            option(value='WAYAKIMA.txt') USA - Washington - Yakima
+                            option(value='WIGREBAY.txt') USA - Wisconsin - Green Bay
+                            option(value='WIMADISO.txt') USA - Wisconsin - Madison
+                            option(value='WIMILWAU.txt') USA - Wisconsin - Milwaukee
+                            option(value='WVCHARLE.txt') USA - West Virginia - Charleston
+                            option(value='WVELKINS.txt') USA - West Virginia - Elkins
+                            option(value='WYCASPER.txt') USA - Wyoming - Casper
+                            option(value='WYCHEYEN.txt') USA - Wyoming - Cheyenne
+                            option(value='VNCARACS.txt') Venezuela - Caracas
+                            option(value='VSHANOI.txt') Vietnam - Hanoi
+                            option(value='YGBLGRDE.txt') Yugoslavia - Belgrade
+                            option(value='YGSKOPJE.txt') Macedonia - Skopje
+                            option(value='YGZAGREB.txt') Croatia - Zagreb
+                            option(value='ZACAPTWN.txt') South Africa - Capetown
+                            option(value='ZBLUSAKA.txt') Zambia - Lusaka
+                        div(style="float:left; height: 34px;line-height: 34px;text-align: center;width: 5%;")  vs 
+                            
+                        select#selectedB.form-control(style="float: left; width: 40%;margin-bottom: 20px;")
+                            option(value='ABTIRANA.txt') Albania - Tirana
+                            option(value='AGBUENOS.txt') Argentina - Buenos Aires
+                            option(value='ALALGIER.txt') Algeria - Algiers
+                            option(value='AUBRSBAN.txt') Australia - Brisbane
+                            option(value='AUCNBERA.txt') Australia - Canberra
+                            option(value='AUMELBRN.txt') Australia - Sydney
+                            option(value='AUPERTH.txt') Australia - Perth
+                            option(value='AUSYDNEY.txt') Australia - Melbourne
+                            option(value='BANASSAU.txt') Bahamas - Nassau
+                            option(value='BHBELIZE.txt') Belize - Belize City
+                            option(value='BJCOTNOU.txt') Benin - Cotonou
+                            option(value='BMRNGOON.txt') Burma - Rangoon
+                            option(value='BNMANAMA.txt') Bahrain - Manama
+                            option(value='BOLAPAZ.txt') Bolivia - La Paz
+                            option(value='BRBRGTWN.txt') Barbados - Bridgetown
+                            option(value='BUSOFIA.txt') Bulgaria - Sofia
+                            option(value='BXBRUSSL.txt') Belgium - Brussels
+                            option(value='BYMINSK.txt') Belarus - Minsk
+                            option(value='BZBRSLIA.txt') Brazil - Brasilia
+                            option(value='BZRIODJN.txt') Brazil - Rio de Janeiro
+                            option(value='BZSAOPLO.txt') Brazil - Sao Paulo
+                            option(value='CEBANGUI.txt') Central African Republic - Bangui
+                            option(value='CGBRZAVL.txt') Congo - Brazzaville
+                            option(value='CIBIEJNG.txt') China - Beijing
+                            option(value='CICHNGDU.txt') China - Chengdu
+                            option(value='CIGNGZHO.txt') China - Guangzhou
+                            option(value='CISHANGH.txt') China - Shanghai
+                            option(value='CISHNYNG.txt') China - Shenyang
+                            option(value='CNCALGRY.txt') Canada - Calgary
+                            option(value='CNEDMNTN.txt') Canada - Edmonton
+                            option(value='CNHLIFAX.txt') Canada - Halifax
+                            option(value='CNOTTOWA.txt') Canada - Ottawa
+                            option(value='CNQUEBEC.txt') Canada - Quebec
+                            option(value='CNREGINA.txt') Canada - Regina
+                            option(value='CNTORONT.txt') Canada - Toronto
+                            option(value='CNVANCVR.txt') Canada - Vancouver
+                            option(value='CNWINNPG.txt') Canada - Winnipeg
+                            option(value='COBOGOTA.txt') Colombia - Bogota
+                            option(value='CSSANJOS.txt') Costa Rica - San Jose
+                            option(value='CUHAVANA.txt') Cuba - Havana
+                            option(value='CZBRTSLV.txt') Slovakia - Bratislava
+                            option(value='CZPRAGUE.txt') Czech Republic - Prague
+                            option(value='DLMUNICH.txt') Germany - Munich
+                            option(value='DNCOPNHG.txt') Denmark - Copenhagen
+                            option(value='DRSNTODM.txt') Dominican Republic - Santo Domingo
+                            option(value='EGCAIRO.txt') Egypt - Cairo
+                            option(value='EQGUAYQL.txt') Equador - Guayaquil
+                            option(value='EQQUITO.txt') Equador - Quito
+                            option(value='ERABUDBI.txt') United Arab Emirates - Abu Dhabi
+                            option(value='ERDUBAI.txt') United Arab Emirates - Dubai
+                            option(value='ETADSABA.txt') Ethiopia - Addis Ababa
+                            option(value='FIHELSIN.txt') Finland - Helsinki
+                            option(value='FRBRDAUX.txt') France - Bordeaux
+                            option(value='FRPARIS.txt') France - Paris
+                            option(value='GBBANJUL.txt') Gambia - Banjul
+                            option(value='GNCONKRY.txt') Guinea - Conakry
+                            option(value='GOLIBRVL.txt') Gabon - Libreville
+                            option(value='GUGUATML.txt') Guatemala - Guatemala City
+                            option(value='GWBISSAU.txt') Guinea-Bissau - Bissau
+                            option(value='HAPORTAP.txt') Haiti - Port au Prince
+                            option(value='HKHONGKG.txt') Hong Kong - Hong Kong
+                            option(value='HOTEGUCI.txt') Honduras - Tegucigalpa
+                            option(value='HUBUDPST.txt') Hungary - Budapest
+                            option(value='IDJAKRTA.txt') Indonesia - Jakarta
+                            option(value='IEDUBLIN.txt') Ireland - Dublin
+                            option(value='ILREYKJV.txt') Iceland - Reykjavik
+                            option(value='INBOMBAY.txt') India - Bombay
+                            option(value='INCALCUT.txt') India - Calcutta
+                            option(value='INCHENAI.txt') India - Chenai
+                            option(value='INDELHI.txt') India - Delhi
+                            option(value='IVABIDJN.txt') Ivory Coast - Abidjan
+                            option(value='IYMILAN.txt') Italy - Milan
+                            option(value='IYROME.txt') Italy - Rome
+                            option(value='JDAMMAN.txt') Jordan - Amman
+                            option(value='JPOSAKA.txt') Japan - Osaka
+                            option(value='JPSAPPOR.txt') Japan - Sapporo
+                            option(value='JPTOKYO.txt') Japan - Tokyo
+                            option(value='KNNAIROB.txt') Kenya - Nairobi
+                            option(value='KOSEOUL.txt') South Korea - Seoul
+                            option(value='KRPYGYNG.txt') North Korea - Pyongyang
+                            option(value='KWKUWAIT.txt') Kuwait - Kuwait
+                            option(value='LAVIENTN.txt') Laos - Vientiane
+                            option(value='LBBEIRUT.txt') Lebanon - Beirut
+                            option(value='MCRABAT.txt') Morocco - Rabat
+                            option(value='MGANTRVO.txt') Madagascar - Antananarivo
+                            option(value='MOULNBTR.txt') Mongolia - Ulan-bator
+                            option(value='MSKUALA.txt') Malaysia - Kuala Lumpur
+                            option(value='MTNOKCHT.txt') Mauritania - Nouakchott
+                            option(value='MWLILNGW.txt') Malawi - Lilongwe
+                            option(value='MXGUADLJ.txt') Mexico - Guadalajara
+                            option(value='MXMONTRY.txt') Mexico - Monterrey
+                            option(value='MXMXCITY.txt') Mexico - Mexico City
+                            option(value='MZMAPUTO.txt') Mozambique - Maputo
+                            option(value='NILAGOS.txt') Nigeria - Lagos
+                            option(value='NKMANAGU.txt') Nicaragua -  Managua
+                            option(value='NLAMSTDM.txt') The Netherlands - Amsterdam
+                            option(value='NMWNDHOK.txt') Namibia - Windhoek
+                            option(value='NOOSLO.txt') Norway - Oslo
+                            option(value='NPKTMNDU.txt') Nepal - Katmandu
+                            option(value='NRNIAMEY.txt') Nigeria - Niamey
+                            option(value='NZACKLND.txt') New Zealand - Auckland
+                            option(value='OMMUSCAT.txt') Oman - Muscat
+                            option(value='OSVIENNA.txt') Austria - Vienna
+                            option(value='PHMANILA.txt') Philippines - Manila
+                            option(value='PKISLMBD.txt') Pakistan - Islamabad
+                            option(value='PKKARACH.txt') Pakistan - Karachi
+                            option(value='PLWARSAW.txt') Poland - Warsaw
+                            option(value='PMPANAMA.txt') Panama - Panama City
+                            option(value='POLISBON.txt') Portugal - Lisbon
+                            option(value='PRLIMA.txt') Peru - Lima
+                            option(value='PRSANJUA.txt') Peru - SAN JUAN
+                            option(value='QTDOHA.txt') Qatar - Doha
+                            option(value='RAALMATY.txt') Kazakhstan - Almaty
+                            option(value='RAASHBAD.txt') Turkmenistan - Ashabad
+                            option(value='RABSHKEK.txt') Kyrgyzstan - Bishkek
+                            option(value='RADUSNBE.txt') Tajikistan - Dusanbe
+                            option(value='RATASKNT.txt') Uzbekistan - Tashkent
+                            option(value='ROBCHRST.txt') Romania - Bucharest
+                            option(value='RSMOSCOW.txt') Russia - Moscow
+                            option(value='RSRIGA.txt') Latvia - Riga
+                            option(value='SBCOLMBO.txt') Sri Lanka - Colombo
+                            option(value='SDDHAHRN.txt') Saudi Arabia - Dhahran
+                            option(value='SDRIYADH.txt') Saudi Arabia - Riyadh
+                            option(value='SGDAKAR.txt') Senegal - Dakar
+                            option(value='SMPRMRIB.txt') Suriname - Paramaribo
+                            option(value='SNSTKHLM.txt') Sweden - Stockholm
+                            option(value='SPBILBAO.txt') Spain - Bilbao
+                            option(value='SPBRCLNA.txt') Spain - Barcelona
+                            option(value='SPMADRID.txt') Spain - Madrid
+                            option(value='SRSINGAP.txt') Singapore - Singapore
+                            option(value='SWBERN.txt') Switzerland - Bern
+                            option(value='SWGENEVA.txt') Switzerland - Geneva
+                            option(value='SWZURICH.txt') Switzerland - Zurich
+                            option(value='SYDMSCUS.txt') Syria - Damascus
+                            option(value='TGLOME.txt') Togo - Lome
+                            option(value='TNDESALM.txt') Tanzania - Dar Es Salaam
+                            option(value='TSTUNIS.txt') Tunisia - Tunis
+                            option(value='TUANKARA.txt') Turkey - Ankara
+                            option(value='TUISTNBL.txt') Turkey - Istanbul
+                            option(value='TWTAIPEI.txt') Taiwan - Taipei
+                            option(value='UGKAMPAL.txt') Uganda - Kampala
+                            option(value='UKBELFST.txt') United Kingdom - Belfast
+                            option(value='UKLONDON.txt' selected) United Kingdom - London
+                            option(value='URKIEV.txt') Ukraine - Kiev
+                            option(value='UYMNTVID.txt') Uruguay - Montvideo
+                            option(value='AKANCHOR.txt') USA - Alaska - Anchorage
+                            option(value='AKFAIRBA.txt') USA - Alaska - Fairbanks
+                            option(value='AKJUNEAU.txt') USA - Alaska - Juneau
+                            option(value='ALBIRMIN.txt') USA - Alabama - Birmingham
+                            option(value='ALHUNTSV.txt') USA - Alabama - Huntsville
+                            option(value='ALMOBILE.txt') USA - Alabama - Mobile
+                            option(value='ALMONTGO.txt') USA - Alabama - Montgomery
+                            option(value='ARFTSMIT.txt') USA - Arkansas - Fort Smith
+                            option(value='ARLIROCK.txt') USA - Arkansas - Little Rock
+                            option(value='AZPHOENI.txt') USA - Arizona - Phoenix
+                            option(value='AZTUCSON.txt') USA - Arizona - Tucson
+                            option(value='CAFRESNO.txt') USA - California - Fresno
+                            option(value='CALOSANG.txt') USA - California - Los Angeles
+                            option(value='CASACRAM.txt') USA - California - Sacramento
+                            option(value='CASANDIE.txt') USA - California - San Diego
+                            option(value='CASANFRA.txt') USA - California - San Francisco
+                            option(value='COCOSPGS.txt') USA - Colorado - Colorado Springs
+                            option(value='CODENVER.txt') USA - Colorado - Denver
+                            option(value='COGRNDJU.txt') USA - Colorado - Grand Junction
+                            option(value='COPUEBLO.txt') USA - Colorado - Pueblo
+                            option(value='CTBRIDGE.txt') USA - Connecticut - Bridgeport
+                            option(value='CTHARTFO.txt') USA - Connecticut - Hartford Springfield
+                            option(value='FLJACKSV.txt') USA - Florida - Jacksonville
+                            option(value='FLMIAMIB.txt') USA - Florida - Miami Beach
+                            option(value='FLORLAND.txt') USA - Florida - Orlando
+                            option(value='FLTALLAH.txt') USA - Florida - Tallahassee
+                            option(value='FLTAMPA.txt') USA - Florida - Tampa St. Petersburg
+                            option(value='FLWPALMB.txt') USA - Florida - West Palm Beach
+                            option(value='GAATLANT.txt') USA - Georgia - Atlanta
+                            option(value='GACOLMBS.txt') USA - Georgia - Columbus
+                            option(value='GAMACON.txt') USA - Georgia - Macon
+                            option(value='GASAVANN.txt') USA - Georgia - Savannah
+                            option(value='HIHONOLU.txt') USA - Hawaii - Honolulu
+                            option(value='IADESMOI.txt') USA - Iowa - Des Moines
+                            option(value='IASIOCTY.txt') USA - Iowa - Sioux City
+                            option(value='IDBOISE.txt') USA - Idaho - Boise
+                            option(value='IDPOCATE.txt') USA - Idaho - Pocatello
+                            option(value='ILCHICAG.txt') USA - Illinois - Chicago
+                            option(value='ILPEORIA.txt') USA - Illinois - Peoria
+                            option(value='ILROCKFO.txt') USA - Illinois - Rockford
+                            option(value='ILSPRING.txt') USA - Illinois - Springfield
+                            option(value='INEVANSV.txt') USA - Indiana - Evansville
+                            option(value='INFTWAYN.txt') USA - Indiana - Fort Wayne
+                            option(value='ININDIAN.txt') USA - Indiana - Indianapolis
+                            option(value='INSOBEND.txt') USA - Indiana - South Bend
+                            option(value='KSGOODLA.txt') USA - Kansas - Goodland
+                            option(value='KSTOPEKA.txt') USA - Kansas - Topeka
+                            option(value='KSWICHIT.txt') USA - Kansas - Wichita
+                            option(value='KYLEXING.txt') USA - Kentucky - Lexington
+                            option(value='KYLOUISV.txt') USA - Kentucky - Louisville
+                            option(value='KYPADUCA.txt') USA - Kentucky - Paducah
+                            option(value='LALAKECH.txt') USA - Louisiana - Lake Charles
+                            option(value='LANEWORL.txt') USA - Louisiana - New Orleans
+                            option(value='LASHREVE.txt') USA - Louisiana - Shreveport
+                            option(value='MABOSTON.txt') USA - Massachusetts - Boston
+                            option(value='MDBALTIM.txt') USA - Maryland - Baltimore
+                            option(value='MDWASHDC.txt') USA - Maryland - Washington DC
+                            option(value='MECARIBO.txt') USA - Maine - Caribou
+                            option(value='MEPORTLA.txt') USA - Maine - Portland
+                            option(value='MIDETROI.txt') USA - Michigan - Detroit
+                            option(value='MIFLINT.txt') USA - Michigan - Flint
+                            option(value='MIGRNDRA.txt') USA - Michigan - Grand Rapids
+                            option(value='MILANSIN.txt') USA - Michigan - Lansing
+                            option(value='MISTEMAR.txt') USA - Michigan - Sault Ste Marie
+                            option(value='MNDULUTH.txt') USA - Minnesota - Duluth
+                            option(value='MNMINPLS.txt') USA - Minnesota - Minneapolis St. Paul
+                            option(value='MOKANCTY.txt') USA - Missouri - Kansas City
+                            option(value='MOSPRING.txt') USA - Missouri - Springfield
+                            option(value='MOSTLOUI.txt') USA - Missouri - St Louis
+                            option(value='MSJACKSO.txt') USA - Mississippi - Jackson
+                            option(value='MSTUPELO.txt') USA - Mississippi - Tupelo
+                            option(value='MTBILLIN.txt') USA - Montana - Billings
+                            option(value='MTGRFALL.txt') USA - Montana - Great Falls
+                            option(value='MTHELENA.txt') USA - Montana - Helena
+                            option(value='NCASHEVI.txt') USA - North Carolina - Asheville
+                            option(value='NCCHARLO.txt') USA - North Carolina - Charlotte
+                            option(value='NCGRNSBO.txt') USA - North Carolina - Greensboro
+                            option(value='NCRALEIG.txt') USA - North Carolina - Raleigh Durham
+                            option(value='NDBISMAR.txt') USA - North Dakota - Bismarck
+                            option(value='NDFARGO.txt') USA - North Dakota - Fargo
+                            option(value='NELINCOL.txt') USA - Nebraska - Lincoln
+                            option(value='NENPLATT.txt') USA - Nebraska - North Platte
+                            option(value='NEOMAHA.txt') USA - Nebraska - Omaha
+                            option(value='NHCONCOR.txt') USA - New Hampshire - Concord
+                            option(value='NJATLCTY.txt') USA - New Hampshire - Atlantic City
+                            option(value='NJNEWARK.txt') USA - New Hampshire - Newark
+                            option(value='NMALBUQU.txt') USA - New Mexico - Albuquerque
+                            option(value='NVLASVEG.txt') USA - Nevada - Las Vegas
+                            option(value='NVRENO.txt') USA - Nevada - Reno
+                            option(value='NYALBANY.txt') USA - New York - Albany
+                            option(value='NYBUFFAL.txt') USA - New York - Buffalo
+                            option(value='NYNEWYOR.txt') USA - New York - New York City
+                            option(value='NYROCHES.txt') USA - New York - Rochester
+                            option(value='NYSYRACU.txt') USA - New York - Syracuse
+                            option(value='OHAKRON.txt') USA - Ohio - Akron Canton
+                            option(value='OHCINCIN.txt') USA - Ohio - Cincinnati
+                            option(value='OHCLEVEL.txt') USA - Ohio - Cleveland
+                            option(value='OHCOLMBS.txt') USA - Ohio - Columbus
+                            option(value='OHDAYTON.txt') USA - Ohio - Dayton
+                            option(value='OHTOLEDO.txt') USA - Ohio - Toledo
+                            option(value='OHYOUNGS.txt') USA - Ohio - Youngstown
+                            option(value='OKOKLCTY.txt') USA - Oklahoma - Oklahoma City
+                            option(value='OKTULSA.txt') USA - Oklahoma - Tulsa
+                            option(value='OREUGENE.txt') USA - Oregon - Eugene
+                            option(value='ORMEDFOR.txt') USA - Oregon - Medford
+                            option(value='ORPORTLA.txt') USA - Oregon - Portland
+                            option(value='ORSALEM.txt') USA - Oregon - Salem
+                            option(value='PAALLENT.txt') USA - Pennsylvania - Allentown
+                            option(value='PAERIE.txt') USA - Pennsylvania - Erie
+                            option(value='PAPHILAD.txt') USA - Pennsylvania - Philadelphia
+                            option(value='PAPITTSB.txt') USA - Pennsylvania - Pittsburgh
+                            option(value='PAWILKES.txt') USA - Pennsylvania - Wilkes Barre
+                            option(value='RIPROVID.txt') USA - Rhode Island - Rhode Island
+                            option(value='SCCHARLE.txt') USA - South Carolina - Charleston
+                            option(value='SCCOLMBA.txt') USA - South Carolina - Columbia
+                            option(value='SDRAPCTY.txt') USA - South Dakota -Rapid City
+                            option(value='SDSIOFAL.txt') USA - South Dakota -Sioux Falls
+                            option(value='TNCHATTA.txt') USA - Tennessee - Chattanooga
+                            option(value='TNKNOXVI.txt') USA - Tennessee - Knoxville
+                            option(value='TNMEMPHI.txt') USA - Tennessee - Memphis
+                            option(value='TNNASHVI.txt') USA - Tennessee - Nashville
+                            option(value='TXABILEN.txt') USA - Texas - Abilene
+                            option(value='TXAMARIL.txt') USA - Texas - Amarillo
+                            option(value='TXAUSTIN.txt') USA - Texas - Austin
+                            option(value='TXBROWNS.txt') USA - Texas - Brownsville
+                            option(value='TXCORPUS.txt') USA - Texas - Corpus Christi
+                            option(value='TXDALLAS.txt') USA - Texas - Dallas Ft Worth
+                            option(value='TXELPASO.txt') USA - Texas - El Paso
+                            option(value='TXHOUSTO.txt') USA - Texas - Houston
+                            option(value='TXLUBBOC.txt') USA - Texas - Lubbock
+                            option(value='TXMIDLAN.txt') USA - Texas - Midland Odessa
+                            option(value='TXSANANG.txt') USA - Texas - San Angelo
+                            option(value='TXSANANT.txt') USA - Texas - San Antonio
+                            option(value='TXWACO.txt') USA - Texas - Waco
+                            option(value='TXWICHFA.txt') USA - Texas - Wichita Falls
+                            option(value='UTSALTLK.txt') USA - Utah - Salt Lake City
+                            option(value='VANORFOL.txt') USA - Virginia - Norfolk
+                            option(value='VARICHMO.txt') USA - Virginia - Richmond
+                            option(value='VAROANOK.txt') USA - Virginia - Roanoke
+                            option(value='VTBURLIN.txt') USA - Vermont - Burlington
+                            option(value='WASEATTL.txt') USA - Washington - Seattle
+                            option(value='WASPOKAN.txt') USA - Washington - Spokane
+                            option(value='WAYAKIMA.txt') USA - Washington - Yakima
+                            option(value='WIGREBAY.txt') USA - Wisconsin - Green Bay
+                            option(value='WIMADISO.txt') USA - Wisconsin - Madison
+                            option(value='WIMILWAU.txt') USA - Wisconsin - Milwaukee
+                            option(value='WVCHARLE.txt') USA - West Virginia - Charleston
+                            option(value='WVELKINS.txt') USA - West Virginia - Elkins
+                            option(value='WYCASPER.txt') USA - Wyoming - Casper
+                            option(value='WYCHEYEN.txt') USA - Wyoming - Cheyenne
+                            option(value='VNCARACS.txt') Venezuela - Caracas
+                            option(value='VSHANOI.txt') Vietnam - Hanoi
+                            option(value='YGBLGRDE.txt') Yugoslavia - Belgrade
+                            option(value='YGSKOPJE.txt') Macedonia - Skopje
+                            option(value='YGZAGREB.txt') Croatia - Zagreb
+                            option(value='ZACAPTWN.txt') South Africa - Capetown
+                            option(value='ZBLUSAKA.txt') Zambia - Lusaka
+                        button.btn.btn-primary(onclick='switchData()' style="float:right;width: 12%;height: 34px;margin-bottom: 6px;") Compare!
+                        br
+                        
+                        button.btn.btn-secondary#btn_temperatureToggle(onclick='yClicked()' style="float:right")  Toggle Unit
+                        
+                    
+                    div#insightDescription(style="clear: both;")
+                    div(style="margin-bottom: 40px; ")
+                        p(style="color:rgb(9,106,156);")
+                            | A green area means that the temperature of the  
+                            strong(style='font-weight: bold;') first city
+                            |  is higher than the one of the 
+                            strong(style='font-weight: bold;') second city
+                            | .
+                           
+                table(style="width: 100%")
+                    tr
+                        td(colspan="2", style="opacity: 0.8", onmouseover="this.style.opacity='1'; ", onmouseout="this.style.opacity='0.8'; ")
+
+                                p 
+                                    strong(style='font-weight: bold;') Comparison of 326 cities and 115 countries by their average temperature
+                                p
+                                    | The temperature data used is for the year 2013 (January 1 to December 31). Source data are from the 
+                                    a(style="text-decoration: underline"  href='https://www.ncdc.noaa.gov/cgi-bin/res40.pl?page=gsod.html') Global Summary of the Day (GSOD)
+                                    |  database archived by the 
+                                    a(style="text-decoration: underline" href='http://www.ncdc.noaa.gov/') National Climatic Data Center (NCDC)
+                                    | . The average daily temperatures are computed from 24 hourly temperature readings in the Global Summary of the Day data.
+                               
+                                | Source:
+                                a(title='http://academic.udayton.edu/kissock/http/Weather/' href='http://academic.udayton.edu/kissock/http/Weather/', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [1]
+
+                                div#postDate(style='float:right;')
+                                    img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+
+                                div(style="clear: both; padding-top:20px; margin-bottom:-40px; color: rgb(54,154,104);")
+                          
+                    tr
+                        td(colspan="2")
+                            a(name='commentSection')
+                            div(style="border-top: 1px solid #e7e7e7; margin-top: 70px; margin-bottom: 10px;")
+                            h3(style="float: left; margin-bottom: 30px;margin-top: 10px;") Leave a comment
+
+
+                            block content
+
+                                div.addCommentForms(style="clear: both;")
+                                    form( method="post", action="/create/5")
+                                        div
+                                            div
+                                                input.form-control(style="background: #f9f9f9; margin-top: 10px;",type="text", class="nameTxt", name="username",placeholder='Name')
+                                            div
+                                                textarea.form-control(style="background: #f9f9f9; margin-top: 11px;",placeholder='Comment', rows='3', name='comment')
+                                            div#addCommentSubmit
+                                                input.btn.btn-default.btn-outline(style="margin-top: 10px;", type="submit", value="Submit")
+                                br
+                                br
+                                #commentsSorted
+                                #comments
+                                    - each comment in comments
+                                        div.comment
+                                            h4
+                                                div.name(style="float:left; font-weight: bold;")= comment.username
+                                                small
+                                                    div(style="float:right").created_at= comment.created
+                                            br
+                                            div.content(style="clear: both; padding-top: 5px;")= comment.content
+                                            hr
+
+
+
+        script(type="text/javascript", src="../js/6.js")
+        script(type="text/javascript", src="../js/allInsights.js")
