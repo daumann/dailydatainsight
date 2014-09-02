@@ -1,0 +1,191 @@
+html(xmlns="http://www.w3.org/1999/xhtml")
+    head
+        title Daily Data Insights - Mixed data findings around the globe!
+        link(rel='image_src', href='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        link(rel='publisher', href='https://plus.google.com/u/0/100387325869371041986')
+        link(rel='canonical', href='http://dailydatainsights.com/')
+        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+        meta(name='keywords', content='data science,data visualization,data findings,interesting facts,data mining,facts,dietmar aumann')
+        meta(name='description', content='Daily Data Insights brings you data findings and data visualization on topics around the globe. DDI is regularly updated and supports the ranking of articles. Check out DDI now!')
+        meta(name='robots', content='noodp')
+        meta(name='twitter:site', content='@DaDaInsights')
+        meta(name='twitter:image', content='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        meta(property='og:title', content='Applied Data Science')
+        meta(property='og:site_name', content='Daily Data Insights')
+        meta(property='og:url', content='http://dailydatainsights.com/')
+        meta(property='og:description', content='Data findings and data visualization on topics around the globe!')
+        meta(property='og:type', content='blog')
+        meta(property='og:image', content='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        meta(property='fb:app_id', content='313302612167180')
+        meta(http-equiv="content-type", content="text/html;charset=utf-8")
+        link(href="../css/tipsy.css", rel="stylesheet", type="text/css")
+        link(rel="stylesheet", href="../css/styleZen.css", type="text/css")
+        link(rel="stylesheet", href="../commons/novus-nvd3-6616c9e/src/nv.d3.css", type="text/css")
+        link(rel="shortcut icon", href="../img/favicon.ico")
+        link(rel="shortcut icon", href="../commons/bootstrap-3.1.1/css/bootstrap.css")
+        link(rel="stylesheet", href="../css/bootstrapSubset.css")
+
+        link(rel='stylesheet', href='//cdn.datatables.net/1.10.2/css/jquery.dataTables.css')
+       
+        link(rel='stylesheet', href='../css/reset.css')
+        
+        link(rel='stylesheet', href='../css/visualization.css')
+        link(rel='stylesheet', href='../commons/leaflet/css/leaflet.css')
+        link(rel='stylesheet', href='../commons/lib/leaflet/css/L.Control.Zoomslider.css')
+        link(rel='stylesheet', href='../commons/lib/leaflet/css/MarkerCluster.Default.css')
+        link(rel='stylesheet', href='../commons/lib/leaflet/css/MarkerCluster.css')
+        
+        script(src='../js/topojson.v1.min.js')
+        script(src='../js/crossfilter.min.js')
+        script(src='../js/visualizationBU.js')
+        script(src='../js/moment.min.js')
+        script(src='../js/leaflet.js')
+        script(src='../js/leaflet.markercluster.js')
+        script(src='../js/L.Control.Zoomslider.js')
+  
+  
+        script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+        script(src="../commons/d3.v3.min.js", charset="utf-8")
+        script(src="../commons/bootstrap-3.1.1/js/bootstrap.js", charset="utf-8")
+        
+        script(type="text/javascript", src="../js/jquery.infinitescroll.js")
+        script(type="text/javascript", src="../js/manual-trigger.js")
+        script(type="text/javascript", src="../js/jquery.tipsy.js")
+  
+  
+  
+      body
+          .containerOne(style="width:1100")
+              .top(style="text-align: !left; margin-bottom: -30px; margin-top: 10px; opacity: 0.5", onmouseover="this.style.opacity='1'; document.getElementById('menuItems').style.opacity='1'; document.getElementById('quotes').style.display='none';  document.getElementById('menuItems').style.display='block' ", onmouseout="this.style.opacity='0.5';document.getElementById('menuItems').style.opacity='0'; document.getElementById('menuItems').style.display='none'; document.getElementById('quotes').style.display='block'; ")
+                  div(style='height: 180; margin-bottom: 100px;')
+                      h1
+                          a(href='/')
+                              img(style='margin-bottom: 30px; margin-right: 20px;', src='../img/wikivisLogo.png', title='Daily Data Insights - Applied Data Science', height='150', width='150')
+                          #menuItems(style='margin-bottom: 74px; margin-top: -40px; display: none; opacity: 0; padding-top: 20px;')
+                              a(style='color: rgb(54,154,104);', href='/about/') about
+                              |  :: 
+                              a(style='color: rgb(9,106,156);', href='/') showroom
+                              |  :: 
+                              a(style='color: rgb(153,0,0);', href='/create/') create
+                          blockquote#quotes(style='margin-top: -40px; padding-top: 20px; display: block;')
+  
+  
+              #content
+                 
+  
+                  article
+                  table(style="width: 100%")
+                      tr
+                          td
+  
+                              div(style="float:left")
+                                  div#upVoteDiv
+                                      img(src="../img/up.svg", title="This visualisation shows research effort; it is clear and appropriate", height="39", style="cursor: pointer; margin-bottom: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="upVote(1)")
+                                  div(style="text-align: center; opacity:0.5; width:45px")
+                                      span#points
+                                          img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+                                  div#downVoteDiv
+                                      img(src="../img/down.svg", title="This visualisation does not show research effort; it is not clear or inappropriate", height="39", style="cursor: pointer; margin-top: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="downVote(1)")
+                              h2#insightTitle(style=" text-align: left; margin-top: 26px; margin-left: 60px; opacity: 0.8")
+                                  | *** loading title ***
+                          td(style="opacity: 0.5", width="140px")
+                              div#insightBadges(style="display:block; float: right;")
+                                  img(src="../img/badgeInteractive.png", title="This visualisation is interactive.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+                                  img(src="../img/badgeTop.png", title="This visualisation is or has been voted amongst the top 5 visualisations of this page.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+  
+                  #contentSVG(style='margin-top: 30px;')
+                      #left_side(style='width:1000px;')
+                          form#search
+                              input(src='../img/7/search.png', type='image')
+                              input(autocomplete='off', type='text')
+                              a.clear(href='#', style='display: none;')
+                                  img(src='../img/7/clear.png')
+                          #prenoms_list_container
+                              .loading
+                                  img(alt='spinner', src='../img/7/spinner.gif')
+                                  br
+                                  br
+                                  | words are loaded
+                              ul
+          
+                      #right_side(style=' width:1000px; height 500px')                        
+                          svg(style=' width:1000px; height: 500px')
+                              defs
+                                  clippath#graphs_clip_path
+                                      rect
+                              rect#playground_bg
+                              g#x_axis.axis
+                              g#y_axis.axis
+                              g#prenoms
+                                  g#lines
+                                  g#circles
+                                  g#labels
+                              g#popup
+                              g#year_zoomers
+                          br
+                          .share_link(style='margin-bottom: 50px;')
+                              h7 Copy this URL to share your selection:
+                              br
+                              input.form-control#share_result(style='width: 600px;margin-top: 5px;', type='text' )
+                                
+                      
+                          
+                             
+                  table(style="width: 100%")
+                      tr
+                          td(colspan="2", style="opacity: 0.8", onmouseover="this.style.opacity='1'; ", onmouseout="this.style.opacity='0.8'; ")
+  
+                                  p 
+                                      strong(style='font-weight: bold;') A distribution comparison of the 300 most used words in the Bible (including Torah) and the Quran
+                                  p
+                                      | Filter/search and select words from one of the holy books of the 
+                                      a(style="text-decoration: underline"  href='http://en.wikipedia.org/wiki/Abrahamic_religions') Abrahamic religions
+                                      | . Hover over the graph to see the exact wordcount of the specific book/ chapter. Share your result by copying the link inside the upper text box.  
+                                  p   
+                                      | The King James Version of the Bible and the Yusuf Ali translation of the Quran are used.
+                                 
+                                  | Source:
+                                  a(title='Download Link: King James Bible' href='http://printkjv.ifbweb.com/', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [1]
+                                a(title='Download Link: Yusuf Ali Quran' href='http://www.gutenberg.org/ebooks/16955', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [2]
+                                
+                                div#postDate(style='float:right;')
+                                    img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+
+                                div(style="clear: both; padding-top:20px; margin-bottom:-40px; color: rgb(54,154,104);")
+                          
+                    tr
+                        td(colspan="2")
+                            a(name='commentSection')
+                            div(style="border-top: 1px solid #e7e7e7; margin-top: 70px; margin-bottom: 10px;")
+                            h3(style="float: left; margin-bottom: 30px;margin-top: 10px;") Leave a comment
+
+
+                            block content
+
+                                div.addCommentForms(style="clear: both;")
+                                    form( method="post", action="/create/8")
+                                        div
+                                            div
+                                                input.form-control(style="background: #f9f9f9; margin-top: 10px;",type="text", class="nameTxt", name="username",placeholder='Name')
+                                            div
+                                                textarea.form-control(style="background: #f9f9f9; margin-top: 11px;",placeholder='Comment', rows='3', name='comment')
+                                            div#addCommentSubmit
+                                                input.btn.btn-default.btn-outline(style="margin-top: 10px;", type="submit", value="Submit")
+                                br
+                                br
+                                #commentsSorted
+                                #comments
+                                    - each comment in comments
+                                        div.comment
+                                            h4
+                                                div.name(style="float:left; font-weight: bold;")= comment.username
+                                                small
+                                                    div(style="float:right").created_at= comment.created
+                                            br
+                                            div.content(style="clear: both; padding-top: 5px;")= comment.content
+                                            hr
+
+
+
+        script(type="text/javascript", src="../js/8.js")
+        script(type="text/javascript", src="../js/allInsights.js")
