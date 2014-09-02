@@ -1,146 +1,146 @@
 .subunit-boundary {
-  fill: none;
-  stroke: #777;
-  stroke-dasharray: 2,2;
-  stroke-linejoin: round;
+    fill: none;
+    stroke: #777;
+    stroke-dasharray: 2,2;
+    stroke-linejoin: round;
 }
 
 #datapoint-list {
-   font-size: 13px;
-   line-height: 1.5em;
-   width: 496px;
-   margin-right: 10px;
+    font-size: 13px;
+    line-height: 1.5em;
+    width: 496px;
+    margin-right: 10px;
 }
 
 #lists {
-   white-space: nowrap;
+    white-space: nowrap;
 }
 #tag-list {
-  display: none;
-  /*float: left;*/
-  width:185px;
-  font-size: 13px;
-  white-space: normal;
-  margin-right: 5px;
+    display: none;
+    /*float: left;*/
+    width:185px;
+    font-size: 13px;
+    white-space: normal;
+    margin-right: 5px;
 }
 #datapoint-list {
-  /*float: left;*/
-  width: 980px;
-  margin-top: 10px;
+    /*float: left;*/
+    width: 980px;
+    margin-top: 10px;
 }
 
 #datapoint-list .serialnumber{
-	width: 25px;
-  display: inline-block;
-  vertical-align: top;
-  padding:2px;
+    width: 25px;
+    display: inline-block;
+    vertical-align: top;
+    padding:2px;
 
 }
 
 #datapoint-list .date {
-  width: 200px;
-  display: inline-block;
-  vertical-align: top;
-  padding:2px;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    padding:2px;
 }
 
 #datapoint-list .stage{
-	width: 300px;
-  display: inline-block;
-  vertical-align: top;
-  padding:2px;
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    padding:2px;
 }
 
 #datapoint-list .title{
-  width: 250px;
-  display: inline-block;
-  vertical-align: top;
-  padding:2px;
+    width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    padding:2px;
 }
 
 #datapoint-list .datapoint {
-  white-space: normal;
-  vertical-align: top;
-  margin-bottom: 1px;
-  display: block;
-  background: #eee;
-  padding: 1.5px;
+    white-space: normal;
+    vertical-align: top;
+    margin-bottom: 1px;
+    display: block;
+    background: #eee;
+    padding: 1.5px;
 }
 #mapcontainer .datapointTitle  {
 
-  margin-bottom: 1px;
-  padding: 3px;
-  font-size: 13px;
-  vertical-align: top;
+    margin-bottom: 1px;
+    padding: 3px;
+    font-size: 13px;
+    vertical-align: top;
 }
 #datapoint-list .datapointTitle {
 
-  white-space: normal;
-  margin-bottom: 1px;
+    white-space: normal;
+    margin-bottom: 1px;
     font-weight: bold;
 }
 .popover-content{
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 1.5em;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.5em;
 }
 .popover-link {
-  color: black;
+    color: black;
 }
 span.datapointsource {
-  display: block;
+    display: block;
 }
 
 .background.bar {
-  fill: #ccc;
+    fill: #ccc;
 }
 
 .foreground.bar {
-  fill: rgb(9,106,156);
+    fill: rgb(9,106,156);
 }
 .axis path, .axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
 }
 
 .axis text {
-  font: 10px sans-serif;
+    font: 10px sans-serif;
 }
 .chart-label {
-  font: 12px sans-serif;
-  font-weight:bold;
+    font: 12px sans-serif;
+    font-weight:bold;
 }
 
 .brush rect.extent {
-  fill: steelblue;
-  fill-opacity: .125;
+    fill: steelblue;
+    fill-opacity: .125;
 }
 
 .brush .resize path {
-  fill: #eee;
-  stroke: #666;
+    fill: #eee;
+    stroke: #666;
 }
 
 #charts {
-  padding: 0px 0px 15px 0px;
-  display:inline-block;
+    padding: 0px 0px 15px 0px;
+    display:inline-block;
 }
 #totals {
-  display:none;  /* inline-block; */
-  margin-right:10px;
-  width:162px;
-  vertical-align: top;
+    display:none;  /* inline-block; */
+    margin-right:10px;
+    width:162px;
+    vertical-align: top;
 }
 #stagedropdown{
-  width:170px;
+    width:170px;
 }
 #map {
-  width:980px;
-  height: 450px;
+    /* width: 980px; */
+    height: 450px;
 }
 #mapcontainer {
-  overflow: auto;
+    overflow: auto;
 }
 /*.leaflet-clickable:hover{
   fill-opacity: .8;
@@ -148,18 +148,19 @@ span.datapointsource {
   fill: red;
 }*/
 .subunit {
-  fill-opacity: .2;
-  stroke: #fff;
-  stroke-width: 1.5px;
+    fill-opacity: .2;
+    stroke: #fff;
+    stroke-width: 1.5px;
 }
 
 .chart {
-  /*display: inline-block;*/
-  
-  height: 121px;
-    margin-top: -20px;
-  margin-bottom: 20px;
-  
+    /*display: inline-block;*/
+
+    height: 140px;
+
+    /* margin-top: -20px; */
+    margin-bottom: 20px;
+
 }
 .info {
     padding: 6px 8px;
