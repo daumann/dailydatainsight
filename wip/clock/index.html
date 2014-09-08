@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+        <script src="jquery.knob.min.js"></script>
+        <script>
+            $(function($) {
+
+                $(".knob").knob({
+                   
+               
+                    draw : function () {
+
+                        // "tron" case
+                        if(this.$.data('skin') == 'tron') {
+
+                            this.cursorExt = 0.3;
+
+                            var a = this.arc(this.cv)  // Arc
+                                , pa                   // Previous arc
+                                , r = 1;
+
+                            this.g.lineWidth = this.lineWidth;
+
+                            if (this.o.displayPrevious) {
+                                pa = this.arc(this.v);
+                                this.g.beginPath();
+                                this.g.strokeStyle = this.pColor;
+                                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
+                                this.g.stroke();
+                            }
+
+                            this.g.beginPath();
+                            this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
+                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
+                            this.g.stroke();
+
+                            this.g.lineWidth = 2;
+                            this.g.beginPath();
+                            this.g.strokeStyle = this.o.fgColor;
+                            this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                            this.g.stroke();
+
+                            return false;
+                        }
+                    }
+                });
+
+           
+            });
+        </script>
+        <style>
+            body{
+                background:#222;
+              padding: 0;
+              margin: 0px 50px;
+              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+              font-weight: 300;
+              text-rendering: optimizelegibility;
+            }
+            p{font-size: 30px; line-height: 30px}
+            div.demo{text-align: center; width: 280px; float: left}
+            div.demo > p{font-size: 20px}
+        </style>
+    </head>
+    <body>
+     
+
+
+        <script>
+        function clock() {
+            var $s = $(".second"),
+                $m = $(".minute"),
+                $h = $(".hour"),
+                $D = $(".day"),
+                $M = $(".month"),  
+            
+                d = new Date(),
+                s = d.getSeconds(),
+                m = d.getMinutes(),
+                h = d.getHours(),
+                D = d.getDate(),
+                M = d.getMonth();
+            $s.val(s).trigger("change");
+            $m.val(m).trigger("change");
+            $h.val(h).trigger("change");
+            $D.val(D).trigger("change");
+            $M.val(M).trigger("change");
+            setTimeout("clock()", 1000);
+        }
+        clock();
+        </script>
+        <div class="demo" style="color:#EEE;background:#222;height:600px;width:calc(100% - 260px)">
+            <div style="position:relative;width:350px;margin:auto">
+                <div style="position:absolute;left:50px;top:50px">
+                    <input class="knob" value="100" data-value="100" data-min="0" data-max="10" data-bgColor="#333" data-fgColor="#0097FF" data-displayInput=false data-width="520" data-height="520" data-thickness=".005">
+                </div>
+                <div style="position:absolute;left:60px;top:60px">
+                    <input class="knob month" data-min="0" data-max="12" data-bgColor="#333" data-fgColor="#1B3E5B" data-displayInput=false data-width="500" data-height="500" data-thickness=".18">
+                </div>           
+                <div style="position:absolute;left:110px;top:110px">
+                    <input class="knob day" data-min="0" data-max="30" data-bgColor="#333" data-fgColor="#1B5970" data-displayInput=false data-width="400" data-height="400" data-thickness=".225">
+                </div>
+                <div style="position:absolute;left:160px;top:160px">
+                    <input class="knob hour" data-min="0" data-max="24" data-bgColor="#333" data-fgColor="#469892" data-displayInput=false data-width="300" data-height="300" data-thickness=".3">
+                </div>
+                <div style="position:absolute;left:210px;top:210px">
+                    <input class="knob minute" data-min="0" data-max="60" data-bgColor="#333" data-displayInput=false data-width="200" data-height="200" data-thickness=".45">
+                </div>
+                <div style="position:absolute;left:260px;top:260px">
+                    <input class="knob second" data-min="0" data-max="60" data-bgColor="#333" data-fgColor="#B7D1C8" data-displayInput=false data-width="100" data-height="100" data-thickness=".45">
+                </div>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+        
+    </body>
+</html>
