@@ -50,7 +50,7 @@ d3.tsv('articleArchiv/quotes.csv', function (error, allQuotes) {
     }
 
             // change comments to "ago format"
-
+/*
             $('#comments').children('div').each(function () {
                 currDate = new Date($($(this).children().eq(0)[0]).children().eq(1)[0].firstChild.innerHTML);
                 $($(this).children().eq(0)[0]).children().eq(1)[0].firstChild.innerHTML = timeSince(currDate) + ' ago';
@@ -62,7 +62,7 @@ d3.tsv('articleArchiv/quotes.csv', function (error, allQuotes) {
             }
 
    document.getElementById("comments").innerHTML = "";
-            
+            */
             /*
             
 

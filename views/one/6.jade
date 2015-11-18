@@ -50,13 +50,9 @@ html(xmlns="http://www.w3.org/1999/xhtml")
                 div(style='height: 180; margin-bottom: 100px;')
                     h1
                         a(href='/')
-                            img(style='margin-bottom: 30px; margin-right: 20px;', src='../img/wikivisLogo.png', title='Daily Data Insights - Applied Data Science', height='150', width='150')
+                            img(style='margin-bottom: 30px; margin-right: 20px;', src='../img/wikivisLogo.png', title='Dietmar Aumann - Projects', height='150', width='150')
                         #menuItems(style='margin-bottom: 74px; margin-top: -40px; display: none; opacity: 0; padding-top: 20px;')
-                            a(style='color: rgb(54,154,104);', href='/about/') about
-                            |  :: 
-                            a(style='color: rgb(9,106,156);', href='/') showroom
-                            |  :: 
-                            a(style='color: rgb(153,0,0);', href='/create/') create
+                            a(style='color: rgb(9,106,156);', href='/') All Projects
                         blockquote#quotes(style='margin-top: -40px; padding-top: 20px; display: block;')
 
 
@@ -721,45 +717,18 @@ html(xmlns="http://www.w3.org/1999/xhtml")
                                     a(style="text-decoration: underline" href='http://www.ncdc.noaa.gov/') National Climatic Data Center (NCDC)
                                     | . The average daily temperatures are computed from 24 hourly temperature readings in the Global Summary of the Day data.
                                
-                                | Source:
-                                a(title='http://academic.udayton.edu/kissock/http/Weather/' href='http://academic.udayton.edu/kissock/http/Weather/', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [1]
 
-                                div#postDate(style='float:right;')
-                                    img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
-
-                                div(style="clear: both; padding-top:20px; margin-bottom:-40px; color: rgb(54,154,104);")
                           
-                    tr
-                        td(colspan="2")
-                            a(name='commentSection')
-                            div(style="border-top: 1px solid #e7e7e7; margin-top: 70px; margin-bottom: 10px;")
-                            h3(style="float: left; margin-bottom: 30px;margin-top: 10px;") Leave a comment
+                                hr
+                                div.lastP
+                                    div.sourceP
+                                        | Source:
+                                        a(title='http://academic.udayton.edu/kissock/http/Weather/' href='http://academic.udayton.edu/kissock/http/Weather/', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [1]
 
+                                    div#postDate(style='float:right;')
+                                        img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
 
-                            block content
-
-                                div.addCommentForms(style="clear: both;")
-                                    form( method="post", action="/create/6")
-                                        div
-                                            div
-                                                input.form-control(style="background: #f9f9f9; margin-top: 10px;",type="text", class="nameTxt", name="username",placeholder='Name')
-                                            div
-                                                textarea.form-control(style="background: #f9f9f9; margin-top: 11px;",placeholder='Comment', rows='3', name='comment')
-                                            div#addCommentSubmit
-                                                input.btn.btn-default.btn-outline(style="margin-top: 10px;", type="submit", value="Submit")
-                                br
-                                br
-                                #commentsSorted
-                                #comments
-                                    - each comment in comments
-                                        div.comment
-                                            h4
-                                                div.name(style="float:left; font-weight: bold;")= comment.username
-                                                small
-                                                    div(style="float:right").created_at= comment.created
-                                            br
-                                            div.content(style="clear: both; padding-top: 5px;")= comment.content
-                                            hr
+                                    div(style="clear: both; padding-top:20px; margin-bottom:-40px; color: rgb(54,154,104);")
 
 
 
