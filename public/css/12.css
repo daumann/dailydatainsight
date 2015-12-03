@@ -1,0 +1,545 @@
+div.dc-chart {
+    /* float: left; */
+}
+
+.dc-chart rect.bar {
+    stroke: none;
+    cursor: pointer;
+}
+
+.dc-chart rect.bar:hover {
+    fill-opacity: .5;
+}
+
+.dc-chart rect.stack1 {
+    stroke: none;
+    fill: red;
+}
+
+.dc-chart rect.stack2 {
+    stroke: none;
+    fill: green;
+}
+
+.dc-chart rect.deselected {
+    stroke: none;
+    fill: #ccc;
+}
+
+.dc-chart .empty-chart .pie-slice path {
+    fill: #FFEEEE;
+    cursor: default;
+}
+
+.dc-chart .empty-chart .pie-slice {
+    cursor: default;
+}
+
+.dc-chart .pie-slice {
+    fill: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.dc-chart .pie-slice.external{
+    fill: black;
+}
+
+.dc-chart .pie-slice :hover {
+    fill-opacity: .8;
+}
+
+.dc-chart .pie-slice.highlight {
+    fill-opacity: .8;
+}
+
+.dc-chart .selected path {
+    stroke-width: 3;
+    stroke: #ccc;
+    fill-opacity: 1;
+}
+
+.dc-chart .deselected path {
+    stroke: none;
+    fill-opacity: .5;
+    fill: #ccc;
+}
+
+.dc-chart .axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.dc-chart .axis text {
+    font: 10px sans-serif;
+}
+
+.dc-chart .grid-line {
+    fill: none;
+    stroke: #ccc;
+    opacity: .5;
+    shape-rendering: crispEdges;
+}
+
+.dc-chart .grid-line line {
+    fill: none;
+    stroke: #ccc;
+    opacity: .5;
+    shape-rendering: crispEdges;
+}
+
+.dc-chart .brush rect.background {
+    z-index: -999;
+}
+
+.dc-chart .brush rect.extent {
+    fill: steelblue;
+    fill-opacity: .125;
+}
+
+.dc-chart .brush .resize path {
+    fill: #eee;
+    stroke: #666;
+}
+
+.dc-chart path.line {
+    fill: none;
+    stroke-width: 1.5px;
+}
+
+.dc-chart circle.dot {
+    stroke: none;
+}
+
+.dc-chart g.dc-tooltip path {
+    fill: none;
+    stroke: grey;
+    stroke-opacity: .8;
+}
+
+.dc-chart path.area {
+    fill-opacity: .3;
+    stroke: none;
+}
+
+.dc-chart .node {
+    font-size: 0.7em;
+    cursor: pointer;
+}
+
+.dc-chart .node :hover {
+    fill-opacity: .8;
+}
+
+.dc-chart .selected circle {
+    stroke-width: 3;
+    stroke: #ccc;
+    fill-opacity: 1;
+}
+
+.dc-chart .deselected circle {
+    stroke: none;
+    fill-opacity: .5;
+    fill: #ccc;
+}
+
+.dc-chart .bubble {
+    stroke: none;
+    fill-opacity: 0.6;
+}
+
+.dc-data-count {
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.dc-data-count .filter-count {
+    color: #3182bd;
+    font-weight: bold;
+}
+
+.dc-data-count .total-count {
+    color: #3182bd;
+    font-weight: bold;
+}
+
+.dc-data-table {
+}
+
+.dc-chart g.state {
+    cursor: pointer;
+}
+
+.dc-chart g.state :hover {
+    fill-opacity: .8;
+}
+
+.dc-chart g.state path {
+    stroke: white;
+}
+
+.dc-chart g.selected path {
+}
+
+.dc-chart g.deselected path {
+    fill: grey;
+}
+
+.dc-chart g.selected text {
+}
+
+.dc-chart g.deselected text {
+    display: none;
+}
+
+.dc-chart g.county path {
+    stroke: white;
+    fill: none;
+}
+
+.dc-chart g.debug rect {
+    fill: blue;
+    fill-opacity: .2;
+}
+
+.dc-chart g.row rect {
+    fill-opacity: 0.8;
+    cursor: pointer;
+}
+
+.dc-chart g.row rect:hover {
+    fill-opacity: 0.6;
+}
+
+.dc-chart g.row text {
+    fill: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.dc-legend {
+    font-size: 11px;
+}
+
+.dc-legend-item {
+    cursor: pointer;
+}
+
+.dc-chart g.axis text {
+    /* Makes it so the user can't accidentally click and select text that is meant as a label only */
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10 */
+    -o-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.dc-chart path.highlight {
+    stroke-width: 3;
+    fill-opacity: 1;
+    stroke-opacity: 1;
+}
+
+.dc-chart .highlight {
+    fill-opacity: 1;
+    stroke-opacity: 1;
+}
+
+.dc-chart .fadeout {
+    fill-opacity: 0.2;
+    stroke-opacity: 0.2;
+}
+
+.dc-chart path.dc-symbol, g.dc-legend-item.fadeout {
+    fill-opacity: 0.5;
+    stroke-opacity: 0.5;
+}
+
+.dc-hard .number-display {
+    float: none;
+}
+
+.dc-chart .box text {
+    font: 10px sans-serif;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10 */
+    -o-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.dc-chart .box line,
+.dc-chart .box circle {
+    fill: #fff;
+    stroke: #000;
+    stroke-width: 1.5px;
+}
+
+.dc-chart .box rect {
+    stroke: #000;
+    stroke-width: 1.5px;
+}
+
+.dc-chart .box .center {
+    stroke-dasharray: 3,3;
+}
+
+.dc-chart .box .outlier {
+    fill: none;
+    stroke: #ccc;
+}
+
+.dc-chart .box.deselected .box {
+    fill: #ccc;
+}
+
+.dc-chart .box.deselected {
+    opacity: .5;
+}
+
+.dc-chart .symbol{
+    stroke: none;
+}
+
+.dc-chart .heatmap .box-group.deselected rect {
+    stroke: none;
+    fill-opacity: .5;
+    fill: #ccc;
+}
+
+.dc-chart .heatmap g.axis text {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+
+
+
+body {
+    /* font-family: "Verdana"; */
+    /* margin: 0px auto; */
+    /* width: 1020px; */
+}
+
+#body {
+    position: relative;
+}
+
+footer {
+    padding: 2em 0 1em 0;
+    font-size: 12px;
+}
+
+h1 {
+    /* font-size: 24px; */
+    /* margin-top: .3em; */
+    /* margin-bottom: 0; */
+    /* display: inline-block; */
+}
+
+#instructions{
+    font-size: 90%;
+    margin-left: 50px;
+}
+
+h1 + h2 {
+    margin-top: 0;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 28px;
+}
+
+h1, h2 {
+    /* font-family: "Yanone Kaffeesatz"; */
+    /* text-rendering: optimizeLegibility; */
+}
+
+#body > p {
+    line-height: 1.5em;
+    width: 640px;
+    text-rendering: optimizeLegibility;
+}
+
+path {
+    /* stroke: black; */
+    /* stroke-width: 0.15px; */
+    /* fill: #fafafa; */
+}
+
+div.tooltip {
+    position: absolute;
+    width: 200px;
+    padding: 8px;
+    font: 12px sans-serif;
+    background: #fff;
+    border: solid 1px #aaa;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.boldDetail{
+    font-weight: bold;
+}
+
+.normalDetail{
+    font-weight: normal;
+}
+
+#charts {
+    padding: 10px 0;
+}
+
+#about{
+    text-align: center;
+    font-size: 90%;
+}
+
+#links{
+    text-align: right;
+    margin-right: 267px;
+    margin-bottom: 10px;
+}
+
+.blacklink{
+    color:black;
+    margin-bottom: 10px;
+}
+
+.chart {padding-top: 10px;
+    display: inline-block;
+    /* height: 151px; */
+    margin-bottom: 20px;
+}
+
+#chart-row-spenders{
+    border-bottom: solid 1px #aaa;
+    border-top: solid 1px #aaa;
+    overflow: hidden;
+}
+
+#chart-hist-spend {
+    padding-top: 10px;
+    border-left: solid 1px #aaa;
+    border-right: solid 1px #aaa;
+}
+
+
+#chart-hist-spend2 {
+    padding-top: 10px;
+    border-right: solid 1px #aaa;
+}
+
+#chart-hist-spend3 {
+    padding-top: 10px;
+    border-right: solid 1px #aaa;
+}
+
+
+#chart-hist-spend4 {
+    padding-top: 10px;
+    border-right: solid 1px #aaa;
+}
+
+
+#chart-hist-spend5 {
+    padding-top: 10px;
+    border-right: solid 1px #aaa;
+}
+
+#chart-hist-spend6 {
+    padding-top: 10px;
+    border-right: solid 1px #aaa;
+}
+
+#chart-hist-spend7 {
+    padding-top: 10px;
+    border-right: solid 1px #aaa;
+}
+
+#chart-hist-spend8 {
+    padding-top: 10px;
+    border-right: solid 1px #aaa;
+}
+
+
+.reset {
+    padding-left: 1em;
+    font-size: smaller;
+    color: #ccc;
+}
+
+.background.bar {
+    fill: #ccc;
+}
+
+.title{
+    text-align: left;
+    /* margin-left: 40px; */
+    font-weight: bold;
+    padding-bottom: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#logTime-chart .foreground.bar {
+    fill: #D9D9D9;
+}
+
+#logTime-chart .background.bar {
+    fill: #F0F0F0;
+}
+
+#userCount-chart .foreground.bar {
+    fill: #6497FF;
+}
+
+#errorCount-chart .foreground.bar {
+    fill:  #d62728;
+}
+
+
+.bar{
+    stroke:black;
+    stroke-width: .3;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font: 10px sans-serif;
+}
+
+.brush rect.extent {
+    fill: steelblue;
+    fill-opacity: .125;
+}
+
+.brush .resize path {
+    fill: #eee;
+    stroke: #666;
+}
+
+#userCount-chart {
+    width: 490px;
+}
+
+#errorCount-chart {
+    width: 245px;
+}
+
+#logTime-chart {
+    width: 500px;
+}
+
+
+

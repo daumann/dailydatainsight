@@ -1,11 +1,13 @@
 var mongoose = require( 'mongoose' );
 var Schema   = mongoose.Schema;
- 
+
+/*
 var Comment = new Schema({
     username : String,
     content  : String,
     created  : Date
 });
+*/
 
 var RatingSchema = new Schema({
     name    : { type: String, trim: true, index: true },
@@ -30,19 +32,11 @@ Article = new Schema({
         return this.points;
     });
 
-/**
- * Increase points of Yuengling
- */
-//Yuengling.increaseRating();
-
-/**
- * Decrese points of Yuengling
- */
-//Yuengling.decreaseRating();
-
-
 ArticleModel = mongoose.model('Article', Article);
 //mongoose.model( 'ratingArray', Point );
+
+
+/*
 
 mongoose.model( 'Comment', Comment );
 mongoose.model( 'Comment1', Comment );
@@ -66,4 +60,6 @@ mongoose.model( 'Comment18', Comment );
 mongoose.model( 'Comment19', Comment );
 mongoose.model( 'Comment20', Comment );
 
-mongoose.connect( 'mongodb://ddi:mongohq@kahana.mongohq.com:10093/ddi_comments' );
+*/
+//mongodb://ddi:mongohq@kahana.mongohq.com:10093/ddi_comments
+mongoose.connect( 'mongodb://localhost/ddi' );

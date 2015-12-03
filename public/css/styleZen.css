@@ -561,3 +561,11 @@ ol.commentlist .comment-author{
 	.subscribe { display: none }
 	.footer { display: none }
 }
+
+.sourceP {
+	float: left;
+}
+.lastP {
+	margin-top: 2em;
+	margin-bottom: 10em;
+}
