@@ -1,4 +1,0 @@
-- change var insightID = 1; in 1.js (first line)
-
-when styling finished:
-- change id in comment section in 1.jade (dynamisch?)
