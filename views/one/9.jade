@@ -1,0 +1,119 @@
+html(xmlns="http://www.w3.org/1999/xhtml")
+    head
+        title Daily Data Insights - Mixed data findings around the globe!
+        link(rel='image_src', href='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        link(rel='publisher', href='https://plus.google.com/u/0/100387325869371041986')
+        link(rel='canonical', href='http://dailydatainsights.com/')
+        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+        meta(name='keywords', content='data science,data visualization,data findings,interesting facts,data mining,facts,dietmar aumann')
+        meta(name='description', content='Daily Data Insights brings you data findings and data visualization on topics around the globe. DDI is regularly updated and supports the ranking of articles. Check out DDI now!')
+        meta(name='robots', content='noodp')
+        meta(name='twitter:site', content='@DaDaInsights')
+        meta(name='twitter:image', content='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        meta(property='og:title', content='Applied Data Science')
+        meta(property='og:site_name', content='Daily Data Insights')
+        meta(property='og:url', content='http://dailydatainsights.com/')
+        meta(property='og:description', content='Data findings and data visualization on topics around the globe!')
+        meta(property='og:type', content='blog')
+        meta(property='og:image', content='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        meta(property='fb:app_id', content='313302612167180')
+        meta(http-equiv="content-type", content="text/html;charset=utf-8")
+        link(href="../css/tipsy.css", rel="stylesheet", type="text/css")
+        link(rel="stylesheet", href="../css/styleZen.css", type="text/css")
+        link(rel="stylesheet", href="../commons/novus-nvd3-6616c9e/src/nv.d3.css", type="text/css")
+        link(rel="shortcut icon", href="../img/favicon.ico")
+        link(rel="shortcut icon", href="../commons/bootstrap-3.1.1/css/bootstrap.css")
+        link(rel="stylesheet", href="../css/bootstrapSubset.css")
+        script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")
+        script(type="text/javascript", src="../js/jquery.infinitescroll.js")
+        script(type="text/javascript", src="../js/manual-trigger.js")
+        script(type="text/javascript", src="../js/jquery.tipsy.js")
+        script(src="../commons/d3.v3.min.js", charset="utf-8")
+        script(src="../commons/jquery.knob.min.js", charset="utf-8")
+        script(src="../commons/bootstrap-3.1.1/js/bootstrap.js", charset="utf-8")
+
+
+    body
+        .containerOne
+            .top(style="text-align: !left; margin-bottom: -30px; margin-top: 10px; opacity: 0.5", onmouseover="this.style.opacity='1'; document.getElementById('menuItems').style.opacity='1'; document.getElementById('quotes').style.display='none';  document.getElementById('menuItems').style.display='block' ", onmouseout="this.style.opacity='0.5';document.getElementById('menuItems').style.opacity='0'; document.getElementById('menuItems').style.display='none'; document.getElementById('quotes').style.display='block'; ")
+                div(style='height: 180; margin-bottom: 100px;')
+                    h1
+                        a(href='/')
+                            img(style='margin-bottom: 30px; margin-right: 20px;', src='../img/wikivisLogo.png', title='Dietmar Aumann - Projects', height='150', width='150')
+                        #menuItems(style='margin-bottom: 74px; margin-top: -40px; display: none; opacity: 0; padding-top: 20px;')
+                            a(style='color: rgb(9,106,156);', href='/') All Projects
+                        blockquote#quotes(style='margin-top: -40px; padding-top: 20px; display: block;')
+
+
+            #content
+
+            article
+                table(style="width: 100%")
+                    tr
+                        td
+
+                            div(style="float:left")
+                                div#upVoteDiv
+                                    img(src="../img/up.svg", title="This visualisation shows research effort; it is clear and appropriate", height="39", style="cursor: pointer; margin-bottom: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="upVote(1)")
+                                div(style="text-align: center; opacity:0.5; width:45px")
+                                    span#points
+                                        img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+                                div#downVoteDiv
+                                    img(src="../img/down.svg", title="This visualisation does not show research effort; it is not clear or inappropriate", height="39", style="cursor: pointer; margin-top: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="downVote(1)")
+                            h2#insightTitle(style=" text-align: left; margin-top: 26px; margin-left: 60px; opacity: 0.8")
+                                | *** loading title ***
+                        td(style="opacity: 0.5", width="140px")
+                            div#insightBadges(style="display:block; float: right;")
+                                img(src="../img/badgeInteractive.png", title="This visualisation is interactive.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+                                img(src="../img/badgeTop.png", title="This visualisation is or has been voted amongst the top 5 visualisations of this page.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+
+                #contentSVG
+                    .clock(style='color:#EEE;background:#222;width: 900px; height:600px;')
+                        div(style='position:relative;width:400px;margin:auto')
+                            div(style='position:absolute;left:-60px;top:40px')
+                                input.knob(value='100', data-value='100', data-min='0', data-max='10', data-bgcolor='#333', data-fgcolor='#0097FF', data-displayinput='false', data-width='520', data-height='520', data-thickness='.005')
+                            div(style='position:absolute;left:-50px;top:50px')
+                                input.knob.month(data-min='0', data-max='12', data-bgcolor='#333', data-fgcolor='#1B3E5B', data-displayinput='false', data-width='500', data-height='500', data-thickness='.18')
+                            div(style='position:absolute;left:0px;top:100px')
+                                input.knob.day(data-min='0', data-max='30', data-bgcolor='#333', data-fgcolor='#1B5970', data-displayinput='false', data-width='400', data-height='400', data-thickness='.225')
+                            div(style='position:absolute;left:50px;top:150px')
+                                input.knob.hour(data-min='0', data-max='24', data-bgcolor='#333', data-fgcolor='#469892', data-displayinput='false', data-width='300', data-height='300', data-thickness='.3')
+                            div(style='position:absolute;left:100px;top:200px')
+                                input.knob.minute(data-min='0', data-max='60', data-bgcolor='#333', data-displayinput='false', data-width='200', data-height='200', data-thickness='.45')
+                            div(style='position:absolute;left:150px;top:250px')
+                                input.knob.year(data-min='0', data-max='400000', data-bgcolor='#333', data-fgcolor='#fff', data-displayinput='true', data-width='100', data-height='100', data-thickness='.15')
+                            div(style='position:absolute;left:150px;top:250px')
+                                input.knob.second(data-min='0', data-max='60', data-bgcolor='#333', data-fgcolor='#B7D1C8', data-displayinput='false', data-width='100', data-height='100', data-thickness='.45')
+                        div(style='clear:both')
+
+
+                table(style="width: 100%; margin-top: 20px")
+                    tr
+                        td(colspan="2", style="opacity: 0.8", onmouseover="this.style.opacity='1'; ", onmouseout="this.style.opacity='0.8'; ")
+
+                                p
+                                    strong(style='font-weight: bold;') Future Clock
+                                p
+                                    | This clock shows the current seconds, minutes, hours (24 hour range), days, month and year.
+                                p
+                                    | Unlike most articles on DDI, not the D3 javascript library but 
+                                    a(style="text-decoration: underline" href='http://canvasjs.com/') canvasjs
+                                    |  has been used. As well as the 
+                                    a(style="text-decoration: underline" href='https://github.com/aterrien/jQuery-Knob') jQuery-Knob 
+                                    |  library.
+                                hr
+                                div.lastP
+                                    div.sourceP
+                                        | Source:
+                                        a(title='http://canvasjs.com/' href='http://canvasjs.com/', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [1]
+                                        a(title='https://github.com/aterrien/jQuery-Knob' href='https://github.com/aterrien/jQuery-Knob', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [2]
+
+                                    div#postDate(style='float:right;')
+                                        img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+
+                                    div(style="clear: both; padding-top:20px; margin-bottom:-40px; color: rgb(54,154,104);")
+
+
+
+        script(type="text/javascript", src="../js/9.js")
+        script(type="text/javascript", src="../js/allInsights.js")

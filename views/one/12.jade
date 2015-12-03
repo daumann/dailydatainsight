@@ -1,0 +1,161 @@
+html(xmlns="http://www.w3.org/1999/xhtml")
+    head
+        title Daily Data Insights - Mixed data findings around the globe!
+        link(rel='image_src', href='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        link(rel='publisher', href='https://plus.google.com/u/0/100387325869371041986')
+        link(rel='canonical', href='http://dailydatainsights.com/')
+        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+        meta(name='keywords', content='data science,data visualization,data findings,interesting facts,data mining,facts,dietmar aumann')
+        meta(name='description', content='Daily Data Insights brings you data findings and data visualization on topics around the globe. DDI is regularly updated and supports the ranking of articles. Check out DDI now!')
+        meta(name='robots', content='noodp')
+        meta(name='twitter:site', content='@DaDaInsights')
+        meta(name='twitter:image', content='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        meta(property='og:title', content='Applied Data Science')
+        meta(property='og:site_name', content='Daily Data Insights')
+        meta(property='og:url', content='http://dailydatainsights.com/')
+        meta(property='og:description', content='Data findings and data visualization on topics around the globe!')
+        meta(property='og:type', content='blog')
+        meta(property='og:image', content='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        meta(property='fb:app_id', content='313302612167180')
+        meta(http-equiv="content-type", content="text/html;charset=utf-8")
+        link(href="../css/tipsy.css", rel="stylesheet", type="text/css")
+        link(href="../css/12.css", rel="stylesheet", type="text/css")
+        link(rel="stylesheet", href="../css/styleZen.css", type="text/css")
+        link(rel="shortcut icon", href="../img/favicon.ico")
+        link(rel="shortcut icon", href="../commons/bootstrap-3.1.1/css/bootstrap.css")
+        link(rel="stylesheet", href="../css/bootstrapSubset.css")
+    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+    script(type="text/javascript", src="../js/jquery.infinitescroll.js")
+    script(type="text/javascript", src="../js/manual-trigger.js")
+    script(type="text/javascript", src="../js/jquery.tipsy.js")
+    script(src="../commons/d3.v3.min.js", charset="utf-8")
+    script(src="../commons/bootstrap-3.1.1/js/bootstrap.js", charset="utf-8")
+
+    script(type="text/javascript", src="../js/lib/d3.v3.js")
+    script(type="text/javascript", src="../js/lib/crossfilter.js")
+    script(type="text/javascript", src="../js/lib/dc.js")
+
+    body
+        .containerOne(style="width:1030px")
+            .top(style="text-align: !left; margin-bottom: -30px; margin-top: 10px; opacity: 0.5", onmouseover="this.style.opacity='1'; document.getElementById('menuItems').style.opacity='1'; document.getElementById('quotes').style.display='none';  document.getElementById('menuItems').style.display='block' ", onmouseout="this.style.opacity='0.5';document.getElementById('menuItems').style.opacity='0'; document.getElementById('menuItems').style.display='none'; document.getElementById('quotes').style.display='block'; ")
+                div(style='height: 180; margin-bottom: 100px;')
+                    h1
+                        a(href='/')
+                            img(style='margin-bottom: 30px; margin-right: 20px;', src='../img/wikivisLogo.png', title='Dietmar Aumann - Projects', height='150', width='150')
+                        #menuItems(style='margin-bottom: 74px; margin-top: -40px; display: none; opacity: 0; padding-top: 20px;')
+                            a(style='color: rgb(9,106,156);', href='/') All Projects
+                        blockquote#quotes(style='margin-top: -40px; padding-top: 20px; display: block;')
+
+
+            #content
+
+            article
+                table(style="width: 100%")
+                    tr
+                        td
+
+                            div(style="float:left")
+                                div#upVoteDiv
+                                    img(src="../img/up.svg", title="This visualisation shows research effort; it is clear and appropriate", height="39", style="cursor: pointer; margin-bottom: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="upVote(1)")
+                                div(style="text-align: center; opacity:0.5; width:45px")
+                                    span#points
+                                        img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+                                div#downVoteDiv
+                                    img(src="../img/down.svg", title="This visualisation does not show research effort; it is not clear or inappropriate", height="39", style="cursor: pointer; margin-top: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="downVote(1)")
+                            h2#insightTitle(style=" text-align: left; margin-top: 26px; margin-left: 60px; opacity: 0.8")
+                                | *** loading title ***
+                        td(style="opacity: 0.5", width="140px")
+                            div#insightBadges(style="display:block; float: right;")
+                                img(src="../img/badgeInteractive.png", title="This visualisation is interactive.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+                                img(src="../img/badgeTop.png", title="This visualisation is or has been voted amongst the top 5 visualisations of this page.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+
+                #contentSVG(style="margin-top: 10px;")
+                    span
+                        span#instructions1
+                            | The UN data used includes information about the following countries; colors indicate the majority religion:
+                        #us-chart(style='padding-top: 10px;')
+                    span
+                        p
+                            h4 Disclaimer
+                            p First, a disclaimer. This article cannot in any way be used as a basis on judgements for any of the worlds religion. The data used is very incomplete and 
+                                strong(style="color: red") correlation does not imply causation.
+                            p Honestly I just wanted to play around with the UN data and was a bit disappointed when realizing that only about a third of the worlds population had been included.
+                        
+                        p                        
+                            span#instructions2(style=' color: rgb(9,106,156); font-weight: bolder;')
+                                | &#10170;&#10170;&#10170; Click a religion to filter the correlated dimension values:
+                    #charts
+                        #chart-row-spenders.display
+                            a.reset(href='javascript:spenderRowChart.filterAll();dc.redrawAll();', style='display: none; ') reset
+                        #chart-hist-spend.chart.display
+                            a.reset(href='javascript:spendHistChart.filterAll();dc.redrawAll();', style='display: none;') reset
+                            .title Human Dev. Index
+                        #chart-hist-spend2.chart.display
+                            a.reset(href='javascript:spendHistChart2.filterAll();dc.redrawAll();', style='display: none;') reset
+                            .title Gender Equ. Index
+                        #chart-hist-spend3.chart.display
+                            a.reset(href='javascript:spendHistChart3.filterAll();dc.redrawAll();', style='display: none;') reset
+                            .title Mean Schooling
+                        #chart-hist-spend4.chart.display
+                            a.reset(href='javascript:spendHistChart4.filterAll();dc.redrawAll();', style='display: none;') reset
+                            .title Life Exp.
+                        #chart-hist-spend5.chart.display
+                            a.reset(href='javascript:spendHistChart5.filterAll();dc.redrawAll();', style='display: none;') reset
+                            .title Internet Usage
+                        #chart-hist-spend6.chart.display
+                            a.reset(href='javascript:spendHistChart6.filterAll();dc.redrawAll();', style='display: none;') reset
+                            .title Age Disparity
+                        #chart-hist-spend7.chart.display
+                            a.reset(href='javascript:spendHistChart7.filterAll();dc.redrawAll();', style='display: none;') reset
+                            .title Refugee Index
+                        #chart-hist-spend8.chart.display
+                            a.reset(href='javascript:spendHistChart8.filterAll();dc.redrawAll();', style='display: none;') reset
+                            .title Gross Nat. Income
+
+                table(style="width: 100%")
+                    tr
+                        td(colspan="2", style="opacity: 0.8", onmouseover="this.style.opacity='1'; ", onmouseout="this.style.opacity='0.8'; ")
+
+                            p
+                                strong(style='font-weight: bold;') Correlation of Human Development Indices and Religion
+                            p Based on UN data, the table indicating the population count of religions is (left outer) joined with multiple tables indicating the human development index (HDI) for each country - then the arithmetic mean is calculated for each religious group, taking into acount the percentage of the total population.
+                            p Individual tables retrieved from:
+                                br
+                                | [1] 
+                                a(href='http://data.un.org/Data.aspx?d=POP&f=tableCode%3a28', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';') Population of religious groups by country
+                                br
+                                | [2] 
+                                a(href='http://data.un.org/DocumentData.aspx?id=363', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';') Human Development Index and its components
+                                br   
+                                | [3] 
+                                a(href='http://data.un.org/DocumentData.aspx?id=361', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';') Gender Inequality Index
+                                br
+                                | [4] 
+                                a(href='http://data.un.org/Data.aspx?d=UNHCR&f=indID%3aType-Ref', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';') Refugees by country
+                                br                                                                  
+                                | [5] 
+                                a(href='http://data.un.org/Explorer.aspx?d=ITU&f=ind1Code%3aI99H', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';') Percentage of individuals using the Internet
+                                br
+                                | [6] 
+                                a(href='http://data.un.org/Explorer.aspx?d=POP&f=tableCode%3a14', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';') Singulate mean age at marriage
+                                br                                                                  
+                                | [7] 
+                                a(href='http://data.un.org/Data.aspx?q=gni&d=SOWC&f=inID%3a94', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';') GNI per capita
+                                br
+
+                    tr
+                        td(colspan="2")
+                            hr
+                            div.lastP
+                                div.sourceP
+                                    | Source:
+                                    a(title='http://data.un.org/' href='http://data.un.org/', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  UN data (A world of information)
+                                div#postDate(style='float:right;')
+                                    img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+
+                                div(style="clear: both; padding-top:20px; margin-bottom:-40px; color: rgb(54,154,104);")
+
+
+
+        script(type="text/javascript", src="../js/12.js")
+        script(type="text/javascript", src="../js/allInsights.js")

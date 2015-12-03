@@ -1,0 +1,11 @@
+#gtaImage {
+    opacity: 0.5;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+
+#gtaImage:hover {
+    opacity: 1;
+}

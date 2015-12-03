@@ -61,5 +61,5 @@ mongoose.model( 'Comment19', Comment );
 mongoose.model( 'Comment20', Comment );
 
 */
-
-mongoose.connect( 'mongodb://ddi:mongohq@kahana.mongohq.com:10093/ddi_comments' );
+//mongodb://ddi:mongohq@kahana.mongohq.com:10093/ddi_comments
+mongoose.connect( 'mongodb://localhost/ddi' );

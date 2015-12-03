@@ -1,0 +1,112 @@
+html(xmlns="http://www.w3.org/1999/xhtml")
+    head
+        title Daily Data Insights - Mixed data findings around the globe!
+        link(rel='image_src', href='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        link(rel='publisher', href='https://plus.google.com/u/0/100387325869371041986')
+        link(rel='canonical', href='http://dailydatainsights.com/')
+        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+        meta(name='keywords', content='data science,data visualization,data findings,interesting facts,data mining,facts,dietmar aumann')
+        meta(name='description', content='Daily Data Insights brings you data findings and data visualization on topics around the globe. DDI is regularly updated and supports the ranking of articles. Check out DDI now!')
+        meta(name='robots', content='noodp')
+        meta(name='twitter:site', content='@DaDaInsights')
+        meta(name='twitter:image', content='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        meta(property='og:title', content='Applied Data Science')
+        meta(property='og:site_name', content='Daily Data Insights')
+        meta(property='og:url', content='http://dailydatainsights.com/')
+        meta(property='og:description', content='Data findings and data visualization on topics around the globe!')
+        meta(property='og:type', content='blog')
+        meta(property='og:image', content='http://www.dailydatainsights.com/img/wikivisLogo.png')
+        meta(property='fb:app_id', content='313302612167180')
+        meta(http-equiv="content-type", content="text/html;charset=utf-8")
+        link(href="../css/tipsy.css", rel="stylesheet", type="text/css")
+        link(href="../css/11.css", rel="stylesheet", type="text/css")
+        link(rel="stylesheet", href="../css/styleZen.css", type="text/css")
+        link(href="../css/nv.d3.css", rel="stylesheet", type="text/css")
+        link(rel="shortcut icon", href="../img/favicon.ico")
+        link(rel="shortcut icon", href="../commons/bootstrap-3.1.1/css/bootstrap.css")
+        link(rel="stylesheet", href="../css/bootstrapSubset.css")
+    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+    script(type="text/javascript", src="../js/jquery.infinitescroll.js")
+    script(type="text/javascript", src="../js/manual-trigger.js")
+    script(type="text/javascript", src="../js/jquery.tipsy.js")
+    script(src="../commons/d3.v3.min.js", charset="utf-8")
+    script(src="../commons/bootstrap-3.1.1/js/bootstrap.js", charset="utf-8")
+
+    script(type="text/javascript", src="../js/lib/d3.v3.js")
+    script(type="text/javascript", src="../js/lib/nv.d3.js")
+
+    body
+        .containerOne(style="width:1000px")
+            .top(style="text-align: !left; margin-bottom: -30px; margin-top: 10px; opacity: 0.5", onmouseover="this.style.opacity='1'; document.getElementById('menuItems').style.opacity='1'; document.getElementById('quotes').style.display='none';  document.getElementById('menuItems').style.display='block' ", onmouseout="this.style.opacity='0.5';document.getElementById('menuItems').style.opacity='0'; document.getElementById('menuItems').style.display='none'; document.getElementById('quotes').style.display='block'; ")
+                div(style='height: 180; margin-bottom: 100px;')
+                    h1
+                        a(href='/')
+                            img(style='margin-bottom: 30px; margin-right: 20px;', src='../img/wikivisLogo.png', title='Dietmar Aumann - Projects', height='150', width='150')
+                        #menuItems(style='margin-bottom: 74px; margin-top: -40px; display: none; opacity: 0; padding-top: 20px;')
+                            a(style='color: rgb(9,106,156);', href='/') All Projects
+                        blockquote#quotes(style='margin-top: -40px; padding-top: 20px; display: block;')
+
+
+            #content
+
+            article
+                table(style="width: 100%")
+                    tr
+                        td
+
+                            div(style="float:left")
+                                div#upVoteDiv
+                                    img(src="../img/up.svg", title="This visualisation shows research effort; it is clear and appropriate", height="39", style="cursor: pointer; margin-bottom: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="upVote(1)")
+                                div(style="text-align: center; opacity:0.5; width:45px")
+                                    span#points
+                                        img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+                                div#downVoteDiv
+                                    img(src="../img/down.svg", title="This visualisation does not show research effort; it is not clear or inappropriate", height="39", style="cursor: pointer; margin-top: -10px;", onmouseover="this.style.opacity='0.5';", onmouseout="this.style.opacity='1';", onclick="downVote(1)")
+                            h2#insightTitle(style=" text-align: left; margin-top: 26px; margin-left: 60px; opacity: 0.8")
+                                | *** loading title ***
+                        td(style="opacity: 0.5", width="140px")
+                            div#insightBadges(style="display:block; float: right;")
+                                img(src="../img/badgeInteractive.png", title="This visualisation is interactive.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+                                img(src="../img/badgeTop.png", title="This visualisation is or has been voted amongst the top 5 visualisations of this page.", height="39", style="display:block; float: right; margin-top: 10px; margin-bottom: -10px; ")
+
+                #contentSVG(style="margin-top: 10px;")
+                    span
+                        span#instructions(style='color:rgb(9,106,156); font-size: 90%; margin-left: 50px; ')
+                            | Click and double click on city names to filter. Mouseover timeline for details.
+                    #chart1.chart.full(style=" background: #f8ebe5; margin-top: 10px;")
+                        svg
+
+                table(style="width: 100%")
+                    tr
+                        td(colspan="2", style="opacity: 0.8", onmouseover="this.style.opacity='1'; ", onmouseout="this.style.opacity='0.8'; ")
+
+                            p
+                                strong(style='font-weight: bold;') Population of Rome Through History in Comparison With Other Major Cities
+                            p
+                                | Population of ancient Rome throughout history in comparison to the development of other large cities in the world until their 3.5 million mark.
+                            p
+                                img(src='http://upload.wikimedia.org/wikipedia/commons/e/ea/Roman_Republic_Empire_map.gif', style='float: left; height: 185px;margin-right: 10px;')
+                                | During the period from 150 to 400, the population of the Roman Empire is estimated to have fallen from 70 million to 50 million, a decline of almost 30%. Proximate causes of the population decrease include the Antonine Plague, Plague of Cyprian, and the Crisis of the Third Century. European population probably reached a minimum during the Extreme weather events of 535–536 and the ensuing Plague of Justinian. Some have connected this demographic transition to the Migration Period Pessimum, when there was a decrease in global temperatures that impaired agricultural yields.
+                            
+                            p(style=" margin-bottom: 20px; ")
+                                | Most numbers are based on the works of American historian 
+                                a(style="text-decoration: underline" href='https://en.wikipedia.org/wiki/Ian_Morris_(historian)') Ian Morris
+                                | .
+
+                            hr
+                            div.lastP
+                                div.sourceP
+                                    | Source:
+                                    a(title='https://en.wikipedia.org/wiki/List_of_largest_cities_throughout_history' href='https://en.wikipedia.org/wiki/List_of_largest_cities_throughout_history', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [1]
+                                    a(title='http://en.wikipedia.org/wiki/Medieval_demography' href='http://en.wikipedia.org/wiki/Medieval_demography', style='opacity: 0.8;', onmouseover='this.style.opacity=\'0.5\';', onmouseout='this.style.opacity=\'0.8\';')  [2]
+
+                                div#postDate(style='float:right;')
+                                    img(style='padding: 0;', src='../img/loadinfo.net.gif', height='16px', width='16px')
+
+                                div(style="clear: both; padding-top:20px; margin-bottom:-40px; color: rgb(54,154,104);")
+                            
+
+
+
+        script(type="text/javascript", src="../js/11.js")
+        script(type="text/javascript", src="../js/allInsights.js")
