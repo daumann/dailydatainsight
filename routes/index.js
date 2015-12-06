@@ -14,7 +14,7 @@ var commentArray = [mongoose.model( 'Comment'),mongoose.model( 'Comment'),mongoo
 
 /* iterate thru list and initialize if not there */
 var fs = require('fs');
-var Converter=require("csvtojson").core.Converter;
+var Converter=require("csvtojson").Converter;
 var json2csv = require('nice-json2csv');
 
 //CSV File Path or CSV String or Readable Stream Object
