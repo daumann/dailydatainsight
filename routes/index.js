@@ -138,7 +138,7 @@ fs.createReadStream(csvFileName).pipe(csvConverter);
 exports.index = function ( req, res ){
 
     res.render( 'page_all', {
-        title : 'Daily Data Insights: Showroom'
+        title : 'Projects - Dietmar Aumann'
     });
 
 }; 
@@ -236,7 +236,7 @@ exports.getMeta = function(req, res) {
 exports.insight = function ( req, res ){
 
         res.render( 'one/'+req.params.id, {
-            title : 'Daily Data Insights: '+req.params.id /*,
+            title : 'Project '+req.params.id /*,
             comments : comments*/
         });
 
